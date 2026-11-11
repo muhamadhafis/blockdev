@@ -1,0 +1,136 @@
+"use client";
+
+import React from "react";
+import ScrollStack, { ScrollStackItem } from "./ui/ScrollStack";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { Button } from "./ui/button";
+
+export function HowBlockDevHelps() {
+  const cards = [
+    {
+      num: "01",
+      title: "Community Event & Seminar",
+      description:
+        "Build valuable connections with fellow builders, share experiences, and discover new collaboration opportunities.",
+      category: "NETWORKING",
+      image:
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      num: "02",
+      title: "Bootcamp",
+      description:
+        "Join an intensive session that combines theory and hands-on practice, designed to equip you with real-world skills to thrive in the world of emerging technologies.",
+      category: "CURRICULUM",
+      image:
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      num: "03",
+      title: "Workshop",
+      description:
+        "Learn directly through practice with experienced mentors, so your skills are ready to be applied in the real world.",
+      category: "HANDS-ON",
+      image:
+        "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      num: "04",
+      title: "Incubation",
+      description:
+        "Turn your ideas into real solutions through intensive mentoring and access to the emerging tech ecosystem",
+      category: "LAUNCHPAD",
+      image:
+        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      num: "05",
+      title: "Hackathon",
+      description:
+        "Sharpen your skills, validate your ideas, and unlock collaboration opportunities through technology-based innovation competitions.",
+      category: "COMPETITION",
+      image:
+        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=80",
+    },
+  ];
+
+  return (
+    <section id="growth" className="py-24 sm:py-32 border-t border-zinc-200/90 bg-zinc-50/50 relative">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-xs font-mono tracking-widest uppercase text-blue-600 border border-blue-200 bg-blue-50 px-3.5 py-1 rounded-full font-medium">
+            PROGRAM TRACKS
+          </span>
+          <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
+            How BlockDev Helps You Grow
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-zinc-600">
+            From hands-on learning to global venture incubation, explore how we accelerate every stage of your builder journey.
+          </p>
+        </div>
+
+        {/* ScrollStack Container */}
+        <div className="w-full max-w-4xl mx-auto" style={{ height: 680 }}>
+          <ScrollStack
+            itemDistance={120}
+            itemStackDistance={28}
+            stackPosition="12%"
+            itemScale={0.04}
+            baseScale={0.84}
+            dimAmount={0.15}
+            blurAmount={0}
+            smoothScroll={true}
+          >
+            {cards.map((card) => (
+              <ScrollStackItem key={card.num}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center h-full">
+                  {/* Left Content */}
+                  <div className="flex flex-col justify-between space-y-4">
+                    <div>
+                      <div className="flex items-center gap-2.5 mb-3 font-mono text-xs">
+                        <span className="text-blue-600 font-bold">{card.num}</span>
+                        <span className="text-zinc-300">//</span>
+                        <span className="text-zinc-500 uppercase tracking-wider">
+                          {card.category}
+                        </span>
+                      </div>
+
+                      <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950">
+                        {card.title}
+                      </h3>
+
+                      <p className="mt-3 text-sm sm:text-base leading-relaxed text-zinc-600">
+                        {card.description}
+                      </p>
+                    </div>
+
+                    <div className="pt-2">
+                      <Link href="#acara">
+                        <Button variant="secondary" size="sm" className="text-xs">
+                          <span>Explore Track</span>
+                          <ArrowUpRight className="h-3.5 w-3.5 ml-1" />
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Right Image */}
+                  <div className="relative w-full h-48 sm:h-56 md:h-64 rounded-2xl overflow-hidden border border-zinc-200/80 shadow-inner bg-zinc-100">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                </div>
+              </ScrollStackItem>
+            ))}
+          </ScrollStack>
+        </div>
+      </div>
+    </section>
+  );
+}

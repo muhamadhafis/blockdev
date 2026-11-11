@@ -1,0 +1,23 @@
+.scroll-reveal {
+  margin: 0;
+  width: 100%;
+}
+
+.scroll-reveal-text {
+  display: block;
+  font-size: clamp(1.35rem, 3vw, 2.4rem);
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.scroll-reveal-word {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.scroll-reveal-piece {
+  display: inline-block;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: opacity, transform;
+}
