@@ -53,7 +53,9 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
   style,
 }) => (
   <div className={`scroll-stack-card ${itemClassName}`.trim()} style={style}>
-    {children}
+    <div className="scroll-stack-card__content">
+      {children}
+    </div>
     <span className="scroll-stack-card__shade" aria-hidden="true" />
   </div>
 );
@@ -247,6 +249,10 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         });
         write(`dim${i}`, dim.toFixed(3), (value) => {
           card.style.setProperty("--scroll-stack-dim", value);
+        });
+        const contentOpacity = Math.max(0, 1 - depth * 1.5);
+        write(`contentOpacity${i}`, contentOpacity.toFixed(3), (value) => {
+          card.style.setProperty("--scroll-stack-content-opacity", value);
         });
       });
 

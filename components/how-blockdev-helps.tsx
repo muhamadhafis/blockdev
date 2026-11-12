@@ -2,9 +2,6 @@
 
 import React from "react";
 import ScrollStack, { ScrollStackItem } from "./ui/ScrollStack";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
-import { Button } from "./ui/button";
 
 export function HowBlockDevHelps() {
   const headerRef = React.useRef<HTMLDivElement>(null);
@@ -78,8 +75,8 @@ export function HowBlockDevHelps() {
             headerRef={headerRef}
             useWindowScroll={true}
             itemDistance={140}
-            itemStackDistance={18}
-            stackPosition="25vh"
+            itemStackDistance={10}
+            stackPosition="28vh"
             itemScale={0.04}
             baseScale={0.85}
             dimAmount={0.15}
@@ -90,16 +87,8 @@ export function HowBlockDevHelps() {
               <ScrollStackItem key={card.num}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center h-full">
                   {/* Left Content */}
-                  <div className="flex flex-col justify-between space-y-4">
+                  <div className="flex flex-col justify-center space-y-4 py-2">
                     <div>
-                      <div className="flex items-center gap-2.5 mb-3 font-mono text-xs">
-                        <span className="text-blue-600 font-bold">{card.num}</span>
-                        <span className="text-zinc-300">{"//"}</span>
-                        <span className="text-zinc-500 uppercase tracking-wider">
-                          {card.category}
-                        </span>
-                      </div>
-
                       <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950">
                         {card.title}
                       </h3>
@@ -107,15 +96,6 @@ export function HowBlockDevHelps() {
                       <p className="mt-3 text-sm sm:text-base leading-relaxed text-zinc-600">
                         {card.description}
                       </p>
-                    </div>
-
-                    <div className="pt-2">
-                      <Link href="#acara">
-                        <Button variant="secondary" size="sm" className="text-xs">
-                          <span>Explore Track</span>
-                          <ArrowUpRight className="h-3.5 w-3.5 ml-1" />
-                        </Button>
-                      </Link>
                     </div>
                   </div>
 

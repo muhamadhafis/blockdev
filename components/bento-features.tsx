@@ -12,7 +12,7 @@ export function BentoFeatures() {
       id="tentang"
       className="relative h-screen min-h-[100dvh] flex items-center justify-center border-t border-zinc-200/80 bg-white px-5 sm:px-8 lg:px-16 overflow-hidden"
     >
-      <div className="w-full max-w-5xl mx-auto flex items-center justify-center text-center">
+      <div className="w-full max-w-5xl mx-auto flex items-center justify-center text-justify">
         {/* Langsung ke deskripsi tanpa judul dengan ScrollReveal (Delay trigger: melewati setengah layar / top 50%) */}
         <ScrollReveal
           highlightColor="#2b6af7"

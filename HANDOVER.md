@@ -54,8 +54,9 @@ Sistem tombol diimplementasikan secara terpusat pada [`components/ui/button.tsx`
 
 ### 1. Navigation Bar ([`components/navbar.tsx`](file:///home/der/dev/blockdev/components/navbar.tsx))
 - **Posisi**: `fixed top-0 inset-x-0 z-50` transparan dengan `backdrop-blur-md`.
-- **Layout `justify-between`**:
-  - **Kiri**: Logo resmi [`public/images/blockdev.png`](file:///home/der/dev/blockdev/public/images/blockdev.png) (`brightness-0 invert` di atas hero) berdampingan dengan daftar menu: `Tentang`, `Knowledge`, `Hackathon`, `Acara`, `Kontak`.
+- **Layout `justify-between` & Adaptif**:
+  - **Hero Mode**: Memakai logo berwarna [`public/images/blockdev-colored.png`](file:///home/der/dev/blockdev/public/images/blockdev-colored.png) dan teks menu terang (`text-zinc-100`).
+  - **Content Mode**: Otomatis beralih ke logo normal [`public/images/blockdev.png`](file:///home/der/dev/blockdev/public/images/blockdev.png) dan teks menu normal (`text-zinc-600`) saat melewati area Hero.
   - **Kanan**: Tombol **Masuk** (style *Ghost*, status *disabled*) dan tombol **Gabung** (style *Secondary*).
 
 ### 2. Hero Section 100vh ([`components/hero.tsx`](file:///home/der/dev/blockdev/components/hero.tsx))
