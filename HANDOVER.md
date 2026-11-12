@@ -94,7 +94,17 @@ Sistem tombol diimplementasikan secara terpusat pada [`components/ui/button.tsx`
   - Interactive physics tile dragging & auto reflow.
   - Lightbox modal dengan navigasi keyboard (`Escape`, `ArrowLeft`, `ArrowRight`) dan navigasi tombol panah (`lucide-react`).
 
-### 6. Section Pendukung Lainnya
+### 6. Section Backed & Trusted Ecosystem ([`components/logo-cloud.tsx`](file:///C:/Users/narad/dev/blockdev/components/logo-cloud.tsx))
+- **Integrasi Komponen `<LogoLoop />` (React Bits)**:
+  - Menggunakan komponen reusable [`components/ui/LogoLoop.tsx`](file:///C:/Users/narad/dev/blockdev/components/ui/LogoLoop.tsx) dan [`components/ui/LogoLoop.css`](file:///C:/Users/narad/dev/blockdev/components/ui/LogoLoop.css).
+  - Menampilkan 20 logo SVG mitra dari folder [`public/images/partners/`](file:///C:/Users/narad/dev/blockdev/public/images/partners/) dalam 2 baris (Dual-Row Infinite Loop).
+  - Baris 1 meluncur ke kiri (`direction="left"`), baris 2 meluncur ke kanan (`direction="right"`).
+  - Tampilan abu-abu bawaan melalui properti `muted={0.7}`, kembali ke warna penuh saat kursor diarahkan atau disentuh.
+  - Mendukung interaktivitas drag & fling, scale on hover, dan fade out mask transparan di ujung kiri-kanan.
+- **Komponen Judul Terstandarisasi ([`components/ui/section-header.tsx`](file:///C:/Users/narad/dev/blockdev/components/ui/section-header.tsx))**:
+  - Komponen judul modular yang menyelaraskan tipografi judul section, badge mono, dan deskripsi antar-section (digunakan pada *Our Journey* dan *Logo Cloud*).
+
+### 7. Section Pendukung Lainnya
 - [`components/target-audience.tsx`](file:///C:/Users/narad/dev/blockdev/components/target-audience.tsx): Tab persona interaktif (Engineers, Students, Founders, Partners).
 - [`components/upcoming-events.tsx`](file:///C:/Users/narad/dev/blockdev/components/upcoming-events.tsx): Kartu event real-world terkini (Monad Metropolis, Astra Commons, Arbitrum Open House).
 - [`components/community-cta.tsx`](file:///C:/Users/narad/dev/blockdev/components/community-cta.tsx): Banner konversi Telegram & Discord + subscription box.

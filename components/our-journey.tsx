@@ -3,6 +3,7 @@
 import React, { useMemo, useState, useSyncExternalStore } from "react";
 import Masonry, { type MasonryItem } from "./ui/Masonry";
 import { Button } from "./ui/button";
+import { SectionHeader } from "./ui/section-header";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const subscribeMediaQuery = (callback: () => void) => {
@@ -176,14 +177,10 @@ export function OurJourney() {
     <section id="journey" className="py-24 sm:py-32 border-t border-zinc-200/90 bg-white relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
-            Our Journey
-          </h2>
-          <p className="mt-4 text-base sm:text-lg text-zinc-600">
-            Check out real moments from our seminars, workshops and hackathons.
-          </p>
-        </div>
+        <SectionHeader
+          title="Our Journey"
+          description="Check out real moments from our seminars, workshops and hackathons."
+        />
 
         {/* Masonry Grid */}
         <div className="w-full">
