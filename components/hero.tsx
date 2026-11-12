@@ -18,11 +18,11 @@ export function Hero() {
         className="absolute inset-0 h-full w-full object-cover pointer-events-none"
       />
 
-      {/* 2. Base Dark Tint (agar video agak kegelapan & tidak diputihkan) */}
-      <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+      {/* 2. Base Dark Tint */}
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
 
-      {/* 3. Bottom Dark Gradient (diperbesar hingga ke atas) */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent pointer-events-none" />
+      {/* 3. Dark Gradient (dipertebal hingga ke atas) */}
+      <div className="absolute inset-0 bg-linear-to-t from-black via-black/80 to-black/50 pointer-events-none" />
 
       {/* Content Container */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
@@ -61,7 +61,7 @@ export function Hero() {
           >
             <Button
               variant="primary"
-              size="responsive"
+              size="md"
               withArrow
               className="w-full sm:w-auto"
             >
@@ -72,7 +72,7 @@ export function Hero() {
           <Link href="#hackathon" className="w-full sm:w-auto">
             <Button
               variant="secondary"
-              size="responsive"
+              size="md"
               className="w-full sm:w-auto"
             >
               EKSPLORASI PROGRAM

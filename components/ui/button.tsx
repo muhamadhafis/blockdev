@@ -34,7 +34,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none",
           {
             // Primary (Electric Blue with top-lit reflection + optional arrow pill)
-            "bg-gradient-to-b from-[#2b6af7] via-[#2563EB] to-[#1d4ed8] text-white border border-blue-400/40 hover:brightness-105 active:scale-[0.98] cursor-pointer":
+            "bg-radial from-[#2b6af7] via-[#2563EB] to-[#1d4ed8] text-white border border-blue-400/40 hover:brightness-105 active:scale-[0.98] cursor-pointer":
               variant === "primary",
 
             // Secondary (Foto 1: Solid White background with black font-mono text)
@@ -64,8 +64,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <span>{children}</span>
         {withArrow && (
-          <span className="ml-2 sm:ml-3 flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-sm bg-white text-blue-600 shadow-sm">
-            <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 stroke-[2.5]" />
+          <span className="ml-2 sm:ml-3 flex h-6 w-6 sm:h-6 sm:w-6 items-center justify-center rounded-sm bg-white text-blue-600 shadow-sm">
+            <ArrowRight className="h-4 w-4 sm:h-3.5 sm:w-3.5 stroke-[2.5]" />
           </span>
         )}
       </button>

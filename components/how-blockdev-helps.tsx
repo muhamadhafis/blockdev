@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 
 export function HowBlockDevHelps() {
+  const headerRef = React.useRef<HTMLDivElement>(null);
   const cards = [
     {
       num: "01",
@@ -59,11 +60,14 @@ export function HowBlockDevHelps() {
     <section id="growth" className="py-24 sm:py-32 border-t border-zinc-200/90 bg-zinc-50/50 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
+        <div
+          ref={headerRef}
+          className="sticky top-20 sm:top-24 z-20 text-center max-w-3xl mx-auto mb-8 pt-2 will-change-transform transition-[transform] duration-75"
+        >
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-950">
             How BlockDev Helps You Grow
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-zinc-600">
+          <p className="mt-2 text-xs sm:text-base text-zinc-600 max-w-xl mx-auto line-clamp-2 sm:line-clamp-none">
             From hands-on learning to global venture incubation, explore how we accelerate every stage of your builder journey.
           </p>
         </div>
@@ -71,10 +75,11 @@ export function HowBlockDevHelps() {
         {/* ScrollStack Container */}
         <div className="w-full max-w-4xl mx-auto">
           <ScrollStack
+            headerRef={headerRef}
             useWindowScroll={true}
             itemDistance={140}
-            itemStackDistance={24}
-            stackPosition="100px"
+            itemStackDistance={18}
+            stackPosition="25vh"
             itemScale={0.04}
             baseScale={0.85}
             dimAmount={0.15}

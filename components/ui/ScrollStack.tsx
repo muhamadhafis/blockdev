@@ -19,6 +19,10 @@ const resolveOffset = (value: number | string, size: number) => {
   if (typeof value === "number") return value;
   const text = String(value).trim();
   if (text.endsWith("%")) return (parseFloat(text) / 100) * size;
+  if (text.endsWith("vh")) {
+    const vh = typeof window !== "undefined" ? window.innerHeight : size;
+    return (parseFloat(text) / 100) * vh;
+  }
   return parseFloat(text) || 0;
 };
 
@@ -54,9 +58,26 @@ export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({
   </div>
 );
 
+interface ScrollStackSettings {
+  itemDistance: number;
+  itemStackDistance: number;
+  stackPosition: number | string;
+  itemScale: number;
+  baseScale: number;
+  dimAmount: number;
+  blurAmount: number;
+  tiltAmount: number;
+  rotationAmount: number;
+  holdDistance: number;
+  smoothScroll: boolean;
+  snap: boolean;
+  onStackComplete?: () => void;
+}
+
 export interface ScrollStackProps {
   children: ReactNode;
   className?: string;
+  headerRef?: React.RefObject<HTMLDivElement | null>;
   itemDistance?: number;
   itemStackDistance?: number;
   stackPosition?: number | string;
@@ -76,6 +97,7 @@ export interface ScrollStackProps {
 const ScrollStack: React.FC<ScrollStackProps> = ({
   children,
   className = "",
+  headerRef,
   itemDistance = 100,
   itemStackDistance = 24,
   stackPosition = "15%",
@@ -94,7 +116,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   const rootRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
   const endRef = useRef<HTMLDivElement>(null);
-  const settingsRef = useRef<any>(null);
+  const settingsRef = useRef<ScrollStackSettings | null>(null);
   const scheduleRef = useRef<(() => void) | null>(null);
   const items = Children.toArray(children);
 
@@ -126,10 +148,10 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     const windowed = useWindowScroll;
     const target: Window | HTMLDivElement = windowed ? window : root;
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const cache = new Map<string, any>();
+    const cache = new Map<string, unknown>();
     let frame = 0;
     let glide = 0;
-    let rest = 0;
+    let rest: ReturnType<typeof window.setTimeout> | number | undefined;
     let complete = false;
     let gliding = false;
     let pressed = false;
@@ -148,7 +170,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       target.scrollTo({ top: value, behavior: "instant" as ScrollBehavior });
     };
 
-    const write = (key: string, value: any, apply: (val: any) => void) => {
+    const write = <T,>(key: string, value: T, apply: (val: T) => void) => {
       if (cache.get(key) === value) return false;
       cache.set(key, value);
       apply(value);
@@ -228,6 +250,18 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         });
       });
 
+      if (headerRef?.current && slots.length > 0) {
+        const lastSlot = slots[slots.length - 1];
+        const lastPin = stackTop + (slots.length - 1) * offset;
+        const currentTop = lastSlot.getBoundingClientRect().top;
+        const exitOffset = Math.max(0, lastPin - currentTop);
+        write("headerExit", exitOffset, (val) => {
+          if (headerRef.current) {
+            headerRef.current.style.transform = val > 0 ? `translate3d(0, -${val}px, 0)` : "";
+          }
+        });
+      }
+
       const done = slots.length > 1 && lastCover >= 0.999;
       if (done !== complete) {
         complete = done;
@@ -287,7 +321,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 
     const settleSoon = () => {
       window.clearTimeout(rest);
-      rest = window.setTimeout(settle, 140) as any;
+      rest = window.setTimeout(settle, 140);
     };
 
     const onScroll = () => {
@@ -323,7 +357,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     observer.observe(root);
     observer.observe(inner);
     target.addEventListener("scroll", onScroll, { passive: true });
-    target.addEventListener("wheel", onWheel as any, { passive: false });
+    target.addEventListener("wheel", onWheel as EventListener, { passive: false });
     target.addEventListener("pointerdown", onPress, { passive: true });
     window.addEventListener("pointerup", onRelease, { passive: true });
     window.addEventListener("pointercancel", onRelease, { passive: true });
@@ -337,14 +371,17 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       window.clearTimeout(rest);
       observer.disconnect();
       target.removeEventListener("scroll", onScroll);
-      target.removeEventListener("wheel", onWheel as any);
+      target.removeEventListener("wheel", onWheel as EventListener);
       target.removeEventListener("pointerdown", onPress);
       window.removeEventListener("pointerup", onRelease);
       window.removeEventListener("pointercancel", onRelease);
       window.removeEventListener("resize", schedule);
+      if (headerRef?.current) {
+        headerRef.current.style.transform = "";
+      }
       scheduleRef.current = null;
     };
-  }, [useWindowScroll]);
+  }, [useWindowScroll, headerRef]);
 
   return (
     <div

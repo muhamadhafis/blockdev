@@ -63,7 +63,7 @@ Sistem tombol diimplementasikan secara terpusat pada [`components/ui/button.tsx`
 - **Background Video**: Memutar video looping [`public/videos/hero.mp4`](file:///home/der/dev/blockdev/public/videos/hero.mp4).
 - **Gradient Overlay**:
   - Gradien Atas: Ditiadakan agar video bersih di bawah navbar.
-  - Gradien Bawah: Diperbesar penuh ke atas (`inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent`) untuk kontras teks optimal.
+  - Gradien Bawah: Diperbesar penuh dan dipertebal ke atas (`inset-0 bg-linear-to-t from-black via-black/80 to-black/50`) serta base tint `bg-black/40` untuk kontras teks optimal.
 - **Teks Tengah Terang (Murni 2 Baris)**:
   - Headline: *Empowering Indonesia’s Builders* (`text-white drop-shadow-md`)
   - Deskripsi: *Learn, build, and connect through a growing builder network across Indonesia* (`text-zinc-100`)
@@ -77,7 +77,7 @@ Sistem tombol diimplementasikan secara terpusat pada [`components/ui/button.tsx`
   - `wordAnimationStart="top 50%"`: Animasi baru terpicu saat teks sudah melewati garis tengah layar.
 
 ### 4. Section How BlockDev Helps You Grow ([`components/how-blockdev-helps.tsx`](file:///home/der/dev/blockdev/components/how-blockdev-helps.tsx))
-- **Integrasi Komponen `<ScrollStack />` (React Bits)**: Efek kartu menumpuk interaktif terintegrasi dengan scroll utama halaman (`useWindowScroll={true}`, tanpa nested container statis).
+- **Integrasi Komponen `<ScrollStack />` (React Bits)**: Efek kartu menumpuk terintegrasi scroll utama halaman (`useWindowScroll={true}`) dengan sticky header yang tersinkronisasi transform keluar secara harmonis bersama kartu terakhir (`headerRef` exit sync, `stackPosition: 25vh`).
 - **5 Kartu Program dengan Dummy Photo**:
   1. *Community Event & Seminar*
   2. *Bootcamp*

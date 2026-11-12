@@ -13,3 +13,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Font utama diganti dari Geist Sans menjadi Inter Display (`next/font/google` dengan `axes: ["opsz"]`).
 - Section *How BlockDev Helps You Grow* (`ScrollStack`) diintegrasikan dengan scroll utama halaman (`useWindowScroll={true}`).
 - Gradient atas pada Hero Video dihapus, dan gradient bawah diperbesar penuh ke atas (`inset-0`).
+- Section *How BlockDev Helps You Grow* dilengkapi sticky header yang tetap menempel di bawah navbar saat kartu program menumpuk di bawahnya.
+- Sinkronisasi exit transform pada sticky header *How BlockDev Helps You Grow* sehingga judul otomatis bergeser ke atas bersama tumpukan kartu saat item terakhir terdorong keluar layar.
