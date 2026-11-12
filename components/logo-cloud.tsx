@@ -36,9 +36,9 @@ export function LogoCloud() {
   const row2 = PARTNER_LOGOS.slice(10, 20);
 
   // Responsive Dimensions: compact on mobile (< sm), larger on desktop (>= sm)
-  const logoHeight = isSmUp ? 256 : 72;
-  const gap = isSmUp ? 32 : 20;
-  const tiltX = isSmUp ? 32 : 16;
+  const logoHeight = isSmUp ? 256 : 128;
+  const gap = 8;
+  const tiltX = 32;
   const speed = isSmUp ? 55 : 40;
 
   return (
@@ -46,7 +46,7 @@ export function LogoCloud() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Consistent Section Header */}
         <SectionHeader
-          title="Backed & Trusted by Leading Ecosystems"
+          title="Trusted by Leading Ecosystems"
           description="Collaborating with top protocols, university alliances, and high-growth technology enterprises."
         />
       </div>
@@ -66,23 +66,6 @@ export function LogoCloud() {
           fadeOut={true}
           fadeOutWidth={0.15}
           draggable={true}
-          ariaLabel="Trusted partner logos row 1"
-        />
-
-        {/* Row 2: Scrolls Right */}
-        <LogoLoop
-          logos={row2}
-          direction="right"
-          speed={speed}
-          logoHeight={logoHeight}
-          gap={gap}
-          tiltX={tiltX}
-          muted={0.7}
-          scaleOnHover={true}
-          fadeOut={true}
-          fadeOutWidth={0.15}
-          draggable={true}
-          ariaLabel="Trusted partner logos row 2"
         />
       </div>
     </section>

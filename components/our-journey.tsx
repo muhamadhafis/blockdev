@@ -150,27 +150,35 @@ export function OurJourney() {
     getSmSnapshot,
     getSmServerSnapshot
   );
-  const [isExpanded, setIsExpanded] = useState(false);
+  // Extra pages of images loaded via "SEE MORE": +2 per click on mobile (< sm), +5 on sm and above
+  const [extraPages, setExtraPages] = useState(0);
 
   // Default limit: 3 images on mobile (< sm), 8 images on sm and above (>= sm)
   const defaultLimit = isSmUp ? 8 : 3;
-  const currentLimit = isExpanded ? ALL_JOURNEY_ITEMS.length : defaultLimit;
+  const pageSize = isSmUp ? 5 : 2;
+  const currentLimit = Math.min(
+    defaultLimit + extraPages * pageSize,
+    ALL_JOURNEY_ITEMS.length
+  );
 
   const visibleItems = useMemo(
     () => ALL_JOURNEY_ITEMS.slice(0, currentLimit),
     [currentLimit]
   );
 
-  const hasMore = ALL_JOURNEY_ITEMS.length > defaultLimit;
+  const hasMore = currentLimit < ALL_JOURNEY_ITEMS.length;
+  const canReset = extraPages > 0;
 
-  const handleToggle = () => {
-    if (isExpanded) {
-      const section = document.getElementById("journey");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+  const handleShowMore = () => {
+    setExtraPages((prev) => prev + 1);
+  };
+
+  const handleShowLess = () => {
+    setExtraPages(0);
+    const section = document.getElementById("journey");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    setIsExpanded((prev) => !prev);
   };
 
   return (
@@ -198,22 +206,32 @@ export function OurJourney() {
         </div>
 
         {/* See More / Show Less Action */}
-        {hasMore && (
+        {(hasMore || canReset) && (
           <div className="mt-12 flex justify-center">
-            <Button
-              type="button"
-              variant="ghost"
-              size="sm"
-              onClick={handleToggle}
-              className="px-6"
-            >
-              <span>{isExpanded ? "SHOW LESS" : "SEE MORE"}</span>
-              {isExpanded ? (
+            {canReset && (
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                onClick={handleShowLess}
+                className="px-6"
+              >
+                <span>SHOW LESS</span>
                 <ChevronUp className="h-4 w-4 shrink-0" />
-              ) : (
+              </Button>
+            )}
+            {hasMore && (
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                onClick={handleShowMore}
+                className="px-6"
+              >
+                <span>SEE MORE</span>
                 <ChevronDown className="h-4 w-4 shrink-0" />
-              )}
-            </Button>
+              </Button>
+            )}
           </div>
         )}
       </div>

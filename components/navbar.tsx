@@ -46,7 +46,7 @@ export function Navbar() {
         <div className="flex items-center gap-10">
           <Link href="/" className="flex items-center group">
             <Image
-              src={isHero ? "/images/blockdev.png" : "/images/blockdev-colored.png"}
+              src={isHero ? "/images/blockdev.png" : "/images/blockdev.png"}
               alt="BlockDev Logo"
               width={160}
               height={31}
