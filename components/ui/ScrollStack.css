@@ -9,9 +9,13 @@
   overflow-y: auto;
 }
 
+.scroll-stack--window {
+  overflow: visible;
+}
+
 .scroll-stack__inner {
   position: relative;
-  padding-inline: clamp(1rem, 6%, 5rem);
+  padding-inline: clamp(0.75rem, 4%, 3rem);
 }
 
 .scroll-stack__slot {
@@ -22,9 +26,9 @@
   position: relative;
   box-sizing: border-box;
   width: 100%;
-  min-height: 22rem;
-  padding: 2.5rem;
-  border-radius: 28px;
+  min-height: auto;
+  padding: 1.5rem;
+  border-radius: 20px;
   background: #ffffff;
   color: #18181b;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -34,6 +38,14 @@
   transform-origin: 50% 0;
   will-change: transform;
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .scroll-stack-card {
+    min-height: 22rem;
+    padding: 2.5rem;
+    border-radius: 28px;
+  }
 }
 
 .scroll-stack-card__shade {

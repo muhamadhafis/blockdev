@@ -19,13 +19,10 @@ export function Hero() {
       />
 
       {/* 2. Base Dark Tint (agar video agak kegelapan & tidak diputihkan) */}
-      <div className="absolute inset-0 bg-black/80 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/20 pointer-events-none" />
 
-      {/* 3. Top Gradient (transisi gelap halus di bawah navbar) */}
-      <div className="absolute top-0 inset-x-0 h-44 bg-linear-to-b from-black/90 via-black/40 to-transparent pointer-events-none" />
-
-      {/* 4. Bottom Dark Gradient */}
-      <div className="absolute bottom-0 inset-x-0 h-48 bg-linear-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+      {/* 3. Bottom Dark Gradient (diperbesar hingga ke atas) */}
+      <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent pointer-events-none" />
 
       {/* Content Container */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
@@ -34,7 +31,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.04em] text-white leading-[1.08] max-w-4xl drop-shadow-md"
+          className="text-4xl sm:text-6xl md:text-7xl tracking-[-0.04em] text-white leading-[1.08] max-w-4xl drop-shadow-md"
         >
           Empowering Indonesia’s Builders
         </motion.h1>
@@ -44,9 +41,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-6 text-base sm:text-lg md:text-xl text-zinc-100 max-w-2xl font-normal leading-relaxed drop-shadow-sm"
+          className="mt-6 text-base sm:text-lg md:text-xl text-zinc-300 max-w-2xl font-normal leading-relaxed drop-shadow-sm"
         >
-          Learn, build, and connect through a growing builder network across Indonesia
+          Learn, build, and connect through a growing builder network across Indonesia.
         </motion.p>
 
         {/* Action Buttons */}

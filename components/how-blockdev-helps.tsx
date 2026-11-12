@@ -60,9 +60,6 @@ export function HowBlockDevHelps() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-mono tracking-widest uppercase text-blue-600 border border-blue-200 bg-blue-50 px-3.5 py-1 rounded-full font-medium">
-            PROGRAM TRACKS
-          </span>
           <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
             How BlockDev Helps You Grow
           </h2>
@@ -72,16 +69,17 @@ export function HowBlockDevHelps() {
         </div>
 
         {/* ScrollStack Container */}
-        <div className="w-full max-w-4xl mx-auto" style={{ height: 680 }}>
+        <div className="w-full max-w-4xl mx-auto">
           <ScrollStack
-            itemDistance={120}
-            itemStackDistance={28}
-            stackPosition="12%"
+            useWindowScroll={true}
+            itemDistance={140}
+            itemStackDistance={24}
+            stackPosition="100px"
             itemScale={0.04}
-            baseScale={0.84}
+            baseScale={0.85}
             dimAmount={0.15}
             blurAmount={0}
-            smoothScroll={true}
+            smoothScroll={false}
           >
             {cards.map((card) => (
               <ScrollStackItem key={card.num}>
@@ -91,7 +89,7 @@ export function HowBlockDevHelps() {
                     <div>
                       <div className="flex items-center gap-2.5 mb-3 font-mono text-xs">
                         <span className="text-blue-600 font-bold">{card.num}</span>
-                        <span className="text-zinc-300">//</span>
+                        <span className="text-zinc-300">{"//"}</span>
                         <span className="text-zinc-500 uppercase tracking-wider">
                           {card.category}
                         </span>

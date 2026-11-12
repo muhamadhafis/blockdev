@@ -29,7 +29,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled}
         className={cn(
-          "inline-flex items-center justify-center font-mono uppercase tracking-wider transition-all duration-200 select-none group",
+          "inline-flex items-center justify-between font-mono uppercase tracking-wider transition-all duration-200 select-none group",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2",
           "disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none",
           {
@@ -50,12 +50,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               variant === "outline",
 
             // Fixed Sizes
-            "h-9 rounded-xl px-3.5 text-xs": size === "sm",
-            "h-11 rounded-xl px-5 text-xs sm:text-sm": size === "md",
-            "h-12 rounded-xl px-6 text-sm sm:text-base": size === "lg",
+            "h-11 rounded-md px-3.5 text-xs": size === "sm",
+            "h-13 rounded-md px-5 text-xs sm:text-sm": size === "md",
+            "h-14 rounded-md px-6 text-sm sm:text-base": size === "lg",
 
             // Responsive Size: Mobile = sm (h-9, text-xs) -> Tablet = md (h-11, text-sm) -> Desktop = lg (h-12, text-sm/base)
-            "h-9 rounded-xl px-3.5 text-xs sm:h-11 sm:px-5 sm:text-xs md:text-sm lg:h-12 lg:px-6 lg:text-sm":
+            "h-9 rounded-md px-3.5 text-xs sm:h-11 sm:px-5 sm:text-xs md:text-sm lg:h-12 lg:px-6 lg:text-sm":
               size === "responsive",
           },
           className
@@ -64,7 +64,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <span>{children}</span>
         {withArrow && (
-          <span className="ml-2 sm:ml-3 flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-md bg-white text-blue-600 shadow-sm transition-transform group-hover:translate-x-0.5">
+          <span className="ml-2 sm:ml-3 flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-sm bg-white text-blue-600 shadow-sm">
             <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 stroke-[2.5]" />
           </span>
         )}

@@ -61,9 +61,9 @@ Sistem tombol diimplementasikan secara terpusat pada [`components/ui/button.tsx`
 ### 2. Hero Section 100vh ([`components/hero.tsx`](file:///home/der/dev/blockdev/components/hero.tsx))
 - **Tampilan Penuh**: `h-screen min-h-[100dvh]`.
 - **Background Video**: Memutar video looping [`public/videos/hero.mp4`](file:///home/der/dev/blockdev/public/videos/hero.mp4).
-- **Dual Gradient**:
-  - Gradien Atas: `from-black/80 to-transparent` (menjaga navbar tetap terbaca jelas).
-  - Gradien Bawah: `from-black/90 to-transparent` (bingkai sinematik simetris).
+- **Gradient Overlay**:
+  - Gradien Atas: Ditiadakan agar video bersih di bawah navbar.
+  - Gradien Bawah: Diperbesar penuh ke atas (`inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent`) untuk kontras teks optimal.
 - **Teks Tengah Terang (Murni 2 Baris)**:
   - Headline: *Empowering Indonesia’s Builders* (`text-white drop-shadow-md`)
   - Deskripsi: *Learn, build, and connect through a growing builder network across Indonesia* (`text-zinc-100`)
@@ -77,7 +77,7 @@ Sistem tombol diimplementasikan secara terpusat pada [`components/ui/button.tsx`
   - `wordAnimationStart="top 50%"`: Animasi baru terpicu saat teks sudah melewati garis tengah layar.
 
 ### 4. Section How BlockDev Helps You Grow ([`components/how-blockdev-helps.tsx`](file:///home/der/dev/blockdev/components/how-blockdev-helps.tsx))
-- **Integrasi Komponen `<ScrollStack />` (React Bits)**: Efek kartu menumpuk interaktif saat di-scroll.
+- **Integrasi Komponen `<ScrollStack />` (React Bits)**: Efek kartu menumpuk interaktif terintegrasi dengan scroll utama halaman (`useWindowScroll={true}`, tanpa nested container statis).
 - **5 Kartu Program dengan Dummy Photo**:
   1. *Community Event & Seminar*
   2. *Bootcamp*
@@ -99,7 +99,7 @@ Sistem tombol diimplementasikan secara terpusat pada [`components/ui/button.tsx`
 blockdev/
 ├── app/
 │   ├── globals.css          # Theme variables, custom grid, utility classes
-│   ├── layout.tsx           # Root layout (Light theme, Geist fonts, metadata)
+│   ├── layout.tsx           # Root layout (Light theme, Inter Display fonts, metadata)
 │   └── page.tsx             # Halaman utama merangkum seluruh section
 ├── components/
 │   ├── ui/
