@@ -77,20 +77,28 @@ Sistem tombol diimplementasikan secara terpusat pada [`components/ui/button.tsx`
   - `enableBlur={false}` & `effect="fade"` untuk mengeliminasi beban rasterisasi GPU pada ponsel berdaya rendah.
   - `wordAnimationStart="top 50%"`: Animasi baru terpicu saat teks sudah melewati garis tengah layar.
 
-### 4. Section How BlockDev Helps You Grow ([`components/how-blockdev-helps.tsx`](file:///home/der/dev/blockdev/components/how-blockdev-helps.tsx))
-- **Integrasi Komponen `<ScrollStack />` (React Bits)**: Efek kartu menumpuk terintegrasi scroll utama halaman (`useWindowScroll={true}`) dengan sticky header yang tersinkronisasi transform keluar secara harmonis bersama kartu terakhir (`headerRef` exit sync, `stackPosition: 25vh`).
-- **5 Kartu Program dengan Dummy Photo**:
+### 4. Section How BlockDev Helps You Grow ([`components/how-blockdev-helps.tsx`](file:///C:/Users/narad/dev/blockdev/components/how-blockdev-helps.tsx))
+- **Integrasi Komponen `<ScrollStack />` (React Bits)**: Efek kartu menumpuk terintegrasi scroll utama halaman (`useWindowScroll={true}`) dengan sticky header yang tersinkronisasi transform keluar secara harmonis bersama kartu terakhir (`headerRef` exit sync, `stackPosition: 28vh`).
+- **4 Kartu Program**:
   1. *Community Event & Seminar*
   2. *Bootcamp*
   3. *Workshop*
   4. *Incubation*
-  5. *Hackathon*
 
-### 5. Section Pendukung Lainnya
-- [`components/target-audience.tsx`](file:///home/der/dev/blockdev/components/target-audience.tsx): Tab persona interaktif (Engineers, Students, Founders, Partners).
-- [`components/upcoming-events.tsx`](file:///home/der/dev/blockdev/components/upcoming-events.tsx): Kartu event real-world terkini (Monad Metropolis, Astra Commons, Arbitrum Open House).
-- [`components/community-cta.tsx`](file:///home/der/dev/blockdev/components/community-cta.tsx): Banner konversi Telegram & Discord + subscription box.
-- [`components/footer.tsx`](file:///home/der/dev/blockdev/components/footer.tsx): Footer terang dengan hak cipta dan kredit inisiasi *William Sutanto*.
+### 5. Section Our Journey ([`components/our-journey.tsx`](file:///C:/Users/narad/dev/blockdev/components/our-journey.tsx))
+- **Integrasi Komponen `<Masonry />` (React Bits)**: Tampilan galeri foto dinamis dokumentasi nyata seminar, workshop, dan hackathon BlockDev.
+- **Fitur Interaktif**:
+  - Auto-fit columns responsive (`columnWidth: 280px`, `gap: 16px`, `radius: 16px`).
+  - Limit tampilan adaptif & tombol See More: default 3 gambar pada mobile (`< sm`), 8 gambar pada desktop (`>= sm`), dan toggle *See More / Show Less* untuk membuka seluruh foto.
+  - Efek hover zoom halus pada setiap kartu foto.
+  - Interactive physics tile dragging & auto reflow.
+  - Lightbox modal dengan navigasi keyboard (`Escape`, `ArrowLeft`, `ArrowRight`) dan navigasi tombol panah (`lucide-react`).
+
+### 6. Section Pendukung Lainnya
+- [`components/target-audience.tsx`](file:///C:/Users/narad/dev/blockdev/components/target-audience.tsx): Tab persona interaktif (Engineers, Students, Founders, Partners).
+- [`components/upcoming-events.tsx`](file:///C:/Users/narad/dev/blockdev/components/upcoming-events.tsx): Kartu event real-world terkini (Monad Metropolis, Astra Commons, Arbitrum Open House).
+- [`components/community-cta.tsx`](file:///C:/Users/narad/dev/blockdev/components/community-cta.tsx): Banner konversi Telegram & Discord + subscription box.
+- [`components/footer.tsx`](file:///C:/Users/narad/dev/blockdev/components/footer.tsx): Footer terang dengan hak cipta dan kredit inisiasi *William Sutanto*.
 
 ---
 

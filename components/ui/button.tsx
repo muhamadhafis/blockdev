@@ -29,7 +29,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled}
         className={cn(
-          "inline-flex items-center justify-between font-mono uppercase tracking-wider transition-all duration-200 select-none group",
+          "inline-flex items-center font-mono uppercase tracking-wider transition-all duration-200 select-none group",
+          withArrow ? "justify-between" : "justify-center",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2",
           "disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none",
           {
@@ -62,7 +63,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         {...props}
       >
-        <span>{children}</span>
+        <span className="inline-flex items-center justify-center gap-2 whitespace-nowrap">{children}</span>
         {withArrow && (
           <span className="ml-2 sm:ml-3 flex h-6 w-6 sm:h-6 sm:w-6 items-center justify-center rounded-sm bg-white text-blue-600 shadow-sm">
             <ArrowRight className="h-4 w-4 sm:h-3.5 sm:w-3.5 stroke-[2.5]" />

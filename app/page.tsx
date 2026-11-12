@@ -2,6 +2,7 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { BentoFeatures } from "@/components/bento-features";
 import { HowBlockDevHelps } from "@/components/how-blockdev-helps";
+import { OurJourney } from "@/components/our-journey";
 import { TargetAudience } from "@/components/target-audience";
 import { UpcomingEvents } from "@/components/upcoming-events";
 import { CommunityCta } from "@/components/community-cta";
@@ -23,7 +24,10 @@ export default function Home() {
         {/* 3. How BlockDev Helps You Grow (ScrollStack Cards) */}
         <HowBlockDevHelps />
 
-        {/* 4. Audience Breakdown: Who is BlockDev for? */}
+        {/* 4. Our Journey (Masonry Photo Grid) */}
+        <OurJourney />
+
+        {/* 5. Audience Breakdown: Who is BlockDev for? */}
         <TargetAudience />
 
         {/* 5. Live & Upcoming Events & Hackathon */}

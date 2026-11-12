@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Standard workspace documentation structure (`docs/`, `.agents/`, `PRD.md`, `CHANGELOG.md`).
+- Section *Our Journey* (`components/our-journey.tsx`) setelah *How BlockDev Helps You Grow*, menampilkan momen nyata seminar, workshop, dan hackathon dengan aksi interaktif *See More* menggunakan komponen `Button` varian `secondary` (limit awal 3 foto pada mobile, 8 foto pada breakpoint `sm` ke atas, dan expand ke seluruh momen).
+- Komponen reusable React Bits `<Masonry />` (`components/ui/Masonry.tsx` & `components/ui/Masonry.css`) dengan layout grid dinamis, interactive physics dragging, lightbox modal, dan hover zoom effect tanpa dependensi baru (menggunakan `lucide-react`).
+- Komponen `Button` (`components/ui/button.tsx`) dioptimalkan dengan wrapper `inline-flex whitespace-nowrap` dan centering otomatis untuk varian tanpa panah, mencegah wrapping teks dan ikon menjadi 2 baris.
 
 ### Changed
 - Font utama diganti dari Geist Sans menjadi Inter Display (`next/font/google` dengan `axes: ["opsz"]`).
