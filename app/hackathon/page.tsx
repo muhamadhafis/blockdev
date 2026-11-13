@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 const INTRO = [
-  "Hackathon BlockDev adalah kompetisi intensif bagi developer, builder, dan kreator untuk menciptakan solusi berbasis emerging technology seperti Blockchain, AI, Robotics, dan lainnya dalam waktu terbatas.",
-  "Peserta akan berkolaborasi, membangun prototipe, dan mempresentasikan ide inovatif mereka di hadapan mentor serta juri dari industri.",
+  "The BlockDev Hackathon is an intensive competition for developers, builders, and creators to build emerging technology solutions — Blockchain, AI, Robotics, and more — within a limited time.",
+  "Participants collaborate, build prototypes, and present their innovative ideas in front of industry mentors and judges.",
 ];
 
 export default function HackathonPage() {
