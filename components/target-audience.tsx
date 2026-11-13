@@ -15,29 +15,29 @@ export function TargetAudience() {
       title: "Engineers & Deep-Tech Builders",
       icon: Terminal,
       badge: "Builders",
-      tagline: "Tingkatkan arsitektur produkmu dan rebut grant global.",
+      tagline: "Level up your product architecture and compete for global grants.",
       benefits: [
-        "Akses ke Hackathon dengan prize pool puluhan ribu USD",
-        "Benchmark & audit arsitektur smart contract bersama peer builders",
-        "Riset terdepan implementasi AI autonomous agents & onchain robotics",
-        "Peluang direkrut oleh protokol global tier-1",
+        "Access to hackathons with prize pools worth tens of thousands of USD",
+        "Benchmark & audit smart contract architecture with peer builders",
+        "Cutting-edge research on AI autonomous agents & onchain robotics",
+        "Recruitment opportunities from tier-1 global protocols",
       ],
-      ctaText: "Mulai Bangun Sekarang",
+      ctaText: "Start Building Now",
       ctaLink: "https://discord.com/invite/VrjqHVgbNA",
     },
     {
       id: "students",
-      title: "Mahasiswa & Tech Enthusiasts",
+      title: "Students & Tech Enthusiasts",
       icon: BookOpen,
       badge: "Beginners",
-      tagline: "Mulai perjalanan emerging tech dari nol dengan mentor terpercaya.",
+      tagline: "Start your emerging tech journey from zero with trusted mentors.",
       benefits: [
-        "Workshop dan bootcamp mingguan gratis tanpa biaya registrasi",
-        "Roadmap belajar terstruktur dari dasar Blockchain hingga AI",
-        "Mendapatkan rekan tim (team matching) untuk kompetisi hackathon",
-        "Portofolio nyata berbasis GitHub yang diakui industri",
+        "Free weekly workshops and bootcamps with no registration fee",
+        "A structured learning roadmap from Blockchain fundamentals to AI",
+        "Team matching for hackathon competitions",
+        "A real, industry-recognized GitHub-based portfolio",
       ],
-      ctaText: "Gabung Kelas & Bootcamp",
+      ctaText: "Join Classes & Bootcamps",
       ctaLink: "https://t.me/blockdev_official",
     },
     {
@@ -45,14 +45,14 @@ export function TargetAudience() {
       title: "Startups & Emerging Founders",
       icon: Briefcase,
       badge: "Founders",
-      tagline: "Ubah prototipe hackathon menjadi startup bernilai tinggi.",
+      tagline: "Turn your hackathon prototype into a high-value startup.",
       benefits: [
-        "Akses program inkubasi dengan cloud credits (DigitalOcean, AWS, GCP)",
-        "Mentorship privat bersama William Sutanto & serial entrepreneurs",
-        "Demo Day eksklusif di hadapan angel investors dan venture capitals",
-        "Bantuan validasi produk langsung ke 15.000+ member komunitas",
+        "Access to incubation programs with cloud credits (DigitalOcean, AWS, GCP)",
+        "Private mentorship with William Sutanto & serial entrepreneurs",
+        "Exclusive Demo Day in front of angel investors and venture capitals",
+        "Product validation support across 15,000+ community members",
       ],
-      ctaText: "Daftar Jalur Inkubasi",
+      ctaText: "Apply to the Incubation Track",
       ctaLink: "https://linktr.ee/blockdev_org",
     },
     {
@@ -60,14 +60,14 @@ export function TargetAudience() {
       title: "Protocols, Grants & Enterprise",
       icon: Handshake,
       badge: "Partners",
-      tagline: "Jangkau ribuan developer paling aktif dan berbakat di Asia Tenggara.",
+      tagline: "Reach thousands of the most active and talented developers in Southeast Asia.",
       benefits: [
-        "Co-organizing hackathon resmi dengan jangkauan ratusan tim builder",
-        "Developer relations & tech evangelism untuk adopsi SDK/API Anda",
-        "Penyaluran developer grants langsung ke proyek yang tervalidasi",
-        "Event kolaborasi tingkat regional & internasional",
+        "Official hackathon co-organizing with reach to hundreds of builder teams",
+        "Developer relations & tech evangelism for your SDK/API adoption",
+        "Direct distribution of developer grants to validated projects",
+        "Regional & international collaborative events",
       ],
-      ctaText: "Hubungi Kerjasama",
+      ctaText: "Contact for Partnership",
       ctaLink: "mailto:partnership@blockdev.org",
     },
   ];
@@ -83,10 +83,10 @@ export function TargetAudience() {
             ECOSYSTEM FIT
           </span>
           <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
-            Untuk Siapa BlockDev Dirancang?
+            Who Is BlockDev Designed For?
           </h2>
           <p className="mt-4 text-base sm:text-lg text-zinc-600">
-            Setiap pilar BlockDev disesuaikan dengan titik perjalanan karir dan kebutuhan ekosistem teknologi Anda.
+            Every BlockDev pillar is tailored to your career journey and your place in the tech ecosystem.
           </p>
         </div>
 
@@ -155,7 +155,7 @@ export function TargetAudience() {
                 </Button>
               </Link>
               <span className="mt-2 text-xs text-zinc-500">
-                100% didukung komunitas terbuka
+                100% backed by an open community
               </span>
             </div>
           </div>

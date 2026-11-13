@@ -47,8 +47,8 @@ export function EventWall() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="EVENT GALLERY"
-          title="Sekilas Momen dari Acara Kami"
-          description="Dari meetup rutin sampai konferensi regional — intip suasananya, lalu gabung di acara berikutnya."
+          title="Glimpses of Our Events"
+          description="From regular meetups to regional conferences — take a look at the vibe, then join the next one."
         />
       </div>
 

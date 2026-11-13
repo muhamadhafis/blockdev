@@ -13,7 +13,7 @@ export function BentoFeatures() {
       className="relative flex items-center justify-center border-t border-zinc-200/80 bg-white px-5 py-20 sm:h-[100dvh] sm:min-h-[100dvh] sm:px-8 lg:px-16 sm:overflow-hidden"
     >
       <div className="w-full max-w-5xl mx-auto flex items-center justify-center sm:text-justify">
-        {/* Langsung ke deskripsi tanpa judul dengan ScrollReveal (Delay trigger: melewati setengah layar / top 50%) */}
+        {/* Description only, no title, with ScrollReveal (trigger: past half screen / top 50%) */}
         <ScrollReveal
           highlightColor="#2b6af7"
           mode="scrub"

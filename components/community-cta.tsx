@@ -33,11 +33,11 @@ export function CommunityCta() {
 
           {/* Headline */}
           <h2 className="relative z-10 text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-zinc-950 max-w-3xl mx-auto leading-tight">
-            Siap Membangun Masa Depan Teknologi Indonesia?
+            Ready to Build Indonesia's Tech Future?
           </h2>
 
           <p className="relative z-10 mt-5 text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
-            Bergabunglah bersama 15.000+ developer, mahasiswa, dan inovator di ekosistem BlockDev. Diskusikan ide, temukan co-founder, dan bangun karyamu hari ini.
+            Join 15,000+ developers, students, and innovators in the BlockDev ecosystem. Share ideas, find co-founders, and start building today.
           </p>
 
           {/* Dual Community CTAs */}
@@ -50,7 +50,7 @@ export function CommunityCta() {
             >
               <Button variant="primary" size="lg" withArrow className="w-full sm:w-auto">
                 <Send className="h-4 w-4 mr-2" />
-                <span>GABUNG TELEGRAM</span>
+                <span>JOIN TELEGRAM</span>
               </Button>
             </Link>
 
@@ -62,7 +62,7 @@ export function CommunityCta() {
             >
               <Button variant="ghost" size="lg" className="w-full sm:w-auto">
                 <MessageSquare className="h-4 w-4 mr-2" />
-                <span>GABUNG DISCORD</span>
+                <span>JOIN DISCORD</span>
               </Button>
             </Link>
           </div>
@@ -70,12 +70,12 @@ export function CommunityCta() {
           {/* Newsletter Box */}
           <div className="relative z-10 mt-12 pt-10 border-t border-zinc-200 max-w-md mx-auto">
             <p className="text-xs font-mono uppercase text-zinc-500 mb-3 tracking-wider">
-              Dapatkan info hackathon & program terbaru via email:
+              Get the latest hackathon & program updates via email:
             </p>
             {subscribed ? (
               <div className="flex items-center justify-center gap-2 text-sm text-blue-600 font-semibold py-2">
                 <Check className="h-4 w-4" />
-                <span>Terima kasih! Kamu telah terdaftar di newsletter BlockDev.</span>
+                <span>Thanks! You're now subscribed to the BlockDev newsletter.</span>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
@@ -83,7 +83,7 @@ export function CommunityCta() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="masukkan email anda..."
+                  placeholder="enter your email..."
                   required
                   className="flex-1 rounded-xl border border-zinc-300 bg-white px-4 py-2 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 shadow-2xs"
                 />

@@ -20,23 +20,23 @@ export function Footer() {
             </Link>
 
             <p className="text-xs text-zinc-600 max-w-sm leading-relaxed">
-              Komunitas builder di Indonesia yang berfokus pada pengembangan emerging technology seperti Blockchain, AI, Robotics, dan inovasi masa depan.
+              A builder community in Indonesia focused on advancing emerging technology such as Blockchain, AI, Robotics, and future innovation.
             </p>
 
             <div className="pt-2 text-xs font-mono text-zinc-500">
-              Inisiasi oleh <strong className="text-zinc-900 font-semibold">William Sutanto</strong> & Tim Ekosistem Builder Indonesia.
+              Initiated by <strong className="text-zinc-900 font-semibold">William Sutanto</strong> & the Indonesian Builder Ecosystem Team.
             </div>
           </div>
 
           {/* Navigasi */}
           <div className="space-y-3">
             <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-900">
-              Menu Utama
+              Main Menu
             </h4>
             <ul className="space-y-1 text-xs font-mono">
               <li>
                 <Link href="#tentang" className="inline-block py-2 hover:text-blue-600 transition-colors">
-                  Tentang
+                  About
                 </Link>
               </li>
               <li>
@@ -51,12 +51,12 @@ export function Footer() {
               </li>
               <li>
                 <Link href="#acara" className="inline-block py-2 hover:text-blue-600 transition-colors">
-                  Acara
+                  Events
                 </Link>
               </li>
               <li>
                 <Link href="#kontak" className="inline-block py-2 hover:text-blue-600 transition-colors">
-                  Kontak
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -65,7 +65,7 @@ export function Footer() {
           {/* Komunitas */}
           <div className="space-y-3">
             <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-900">
-              Komunitas
+              Community
             </h4>
             <ul className="space-y-2 text-xs font-mono">
               <li>
@@ -74,7 +74,7 @@ export function Footer() {
                   target="_blank"
                   className="inline-block py-2 hover:text-blue-600 transition-colors"
                 >
-                  Telegram Resmi
+                  Telegram (Official)
                 </Link>
               </li>
               <li>

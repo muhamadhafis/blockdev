@@ -13,10 +13,10 @@ export function UpcomingEvents() {
       category: "Developer Meetup",
       date: "09 Sep 2026",
       location: "Jakarta & Hybrid",
-      status: "Registrasi Dibuka",
+      status: "Registration Open",
       isLive: true,
       description:
-        "Eksplorasi arsitektur paralel EVM, optimasi execution engine, dan live coding bersama engineer Monad.",
+        "Explore parallel EVM architecture, execution engine optimization, and live coding with Monad engineers.",
       link: "https://blockdev.org/event",
     },
     {
@@ -24,21 +24,21 @@ export function UpcomingEvents() {
       category: "Flagship Hackathon",
       date: "24 Sep 2026",
       location: "Jakarta, Indonesia",
-      status: "Pendaftaran Dibuka",
+      status: "Registration Open",
       isLive: true,
       description:
-        "Kompetisi 48 jam membangun solusi desentralisasi berbasis AI & Blockchain dengan total hadiah grant $25,000.",
+        "A 48-hour competition building AI & Blockchain based decentralized solutions with a total grant prize of $25,000.",
       link: "https://blockdev.org/event",
     },
     {
       title: "Arbitrum Open House: Layer-2 Scaling",
       category: "International Connect",
-      date: "12 Okt 2026",
+      date: "12 Oct 2026",
       location: "Singapore & Online",
-      status: "Segera Hadir",
+      status: "Coming Soon",
       isLive: false,
       description:
-        "Diskusi eksklusif Nitro architecture, Stylus (Rust on EVM), dan peluang builder Asia Tenggara.",
+        "An exclusive discussion on Nitro architecture, Stylus (Rust on EVM), and opportunities for Southeast Asian builders.",
       link: "https://blockdev.org/event",
     },
   ];
@@ -53,16 +53,16 @@ export function UpcomingEvents() {
               LIVE & UPCOMING
             </span>
             <h2 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
-              Acara & Hackathon Terkini
+              Latest Events & Hackathons
             </h2>
             <p className="mt-3 text-base text-zinc-600 max-w-2xl">
-              Jangan lewatkan kesempatan belajar langsung dari core developers dunia dan memperluas relasi builder-mu.
+              Don't miss the chance to learn directly from world-class core developers and expand your builder network.
             </p>
           </div>
 
           <Link href="https://blockdev.org/event" target="_blank">
             <Button variant="secondary" size="sm" className="hidden md:inline-flex text-xs">
-              <span>SEMUA ACARA</span>
+              <span>ALL EVENTS</span>
               <ArrowUpRight className="h-3.5 w-3.5 ml-1" />
             </Button>
           </Link>
@@ -129,7 +129,7 @@ export function UpcomingEvents() {
         <div className="mt-10 flex justify-center md:hidden">
           <Link href="https://blockdev.org/event" target="_blank">
             <Button variant="secondary" size="sm" className="text-xs">
-              <span>SEMUA ACARA</span>
+              <span>ALL EVENTS</span>
               <ArrowUpRight className="h-3.5 w-3.5 ml-1" />
             </Button>
           </Link>
