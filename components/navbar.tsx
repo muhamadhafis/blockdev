@@ -34,19 +34,19 @@ export function Navbar() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { name: "Tentang", href: "#tentang" },
+    { name: "About", href: "#tentang" },
     { name: "Knowledge", href: "#knowledge" },
     { name: "Hackathon", href: "#hackathon" },
-    { name: "Acara", href: "#acara" },
-    { name: "Kontak", href: "#kontak" },
+    { name: "Events", href: "#acara" },
+    { name: "Contact", href: "#kontak" },
   ];
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 backdrop-blur-md border-b transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-50 backdrop-blur-md transition-all duration-300 ${
         isHero
-          ? "bg-black/25 border-white/10 shadow-none"
-          : "bg-white/90 border-zinc-200/80 shadow-xs"
+          ? "bg-black/25"
+          : "bg-white/25"
       }`}
     >
       <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -54,7 +54,7 @@ export function Navbar() {
         <div className="flex items-center gap-10">
           <Link href="/" className="flex items-center group">
             <Image
-              src={isHero ? "/images/blockdev.png" : "/images/blockdev.png"}
+              src={isHero ? "/images/blockdev.png" : "/images/blockdev-colored.png"}
               alt="BlockDev Logo"
               width={160}
               height={31}
@@ -64,7 +64,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="uppercase hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -81,27 +81,15 @@ export function Navbar() {
           </nav>
         </div>
 
-        {/* Right Side: Action Buttons */}
+        {/* Right Side: Action Button */}
         <div className="hidden md:flex items-center gap-3">
-          {/* Menu Masuk: Ghost Button (Disabled) */}
-          <Button
-            variant="ghost"
-            size="sm"
-            disabled
-            title="Fitur masuk sedang dipersiapkan"
-            className={isHero ? "text-white/80 border-white/10 hover:text-white" : ""}
-          >
-            Masuk
-          </Button>
-
-          {/* Action CTA: Style Second (White with subtle border) */}
           <Link
             href="https://linktr.ee/blockdev_org"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button variant="secondary" size="sm">
-              Gabung
+              Come Join Us
             </Button>
           </Link>
         </div>
@@ -120,8 +108,8 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-zinc-200 bg-white/95 backdrop-blur-xl px-5 py-6 space-y-4">
-          <div className="flex flex-col space-y-3">
+        <div className="md:hidden border-zinc-200 bg-white/95 backdrop-blur-xl px-5 py-6 space-y-4">
+          <div className="uppercase flex flex-col space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -135,9 +123,6 @@ export function Navbar() {
           </div>
 
           <div className="pt-4 border-t border-zinc-200 flex flex-col gap-2.5">
-            <Button variant="ghost" disabled className="w-full">
-              Masuk
-            </Button>
             <Link
               href="https://linktr.ee/blockdev_org"
               target="_blank"
@@ -145,7 +130,7 @@ export function Navbar() {
               className="w-full"
             >
               <Button variant="secondary" className="w-full">
-                Gabung Komunitas
+                Come Join Us
               </Button>
             </Link>
           </div>
