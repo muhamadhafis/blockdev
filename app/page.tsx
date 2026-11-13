@@ -1,9 +1,11 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { BentoFeatures } from "@/components/bento-features";
+import { Stats } from "@/components/stats";
 import { HowBlockDevHelps } from "@/components/how-blockdev-helps";
 import { OurJourney } from "@/components/our-journey";
 import { LogoCloud } from "@/components/logo-cloud";
+import { EventWall } from "@/components/event-wall";
 import { TargetAudience } from "@/components/target-audience";
 import { UpcomingEvents } from "@/components/upcoming-events";
 import { CommunityCta } from "@/components/community-cta";
@@ -22,16 +24,22 @@ export default function Home() {
         {/* 2. About BlockDev Statement (100vh ScrollReveal) */}
         <BentoFeatures />
 
-        {/* 3. How BlockDev Helps You Grow (ScrollStack Cards) */}
+        {/* 3. Community Stats (CountUp Roll Numbers) */}
+        <Stats />
+
+        {/* 4. How BlockDev Helps You Grow (ScrollStack Cards) */}
         <HowBlockDevHelps />
 
-        {/* 4. Our Journey (Masonry Photo Grid) */}
+        {/* 5. Our Journey (Masonry Photo Grid) */}
         <OurJourney />
 
         {/* 5. Backed & Trusted Ecosystem (Logo Cloud Carousel) */}
         <LogoCloud />
 
-        {/* 6. Audience Breakdown: Who is BlockDev for? */}
+        {/* 6. Event Gallery Glimpse (DriftWall) */}
+        <EventWall />
+
+        {/* 7. Audience Breakdown: Who is BlockDev for? */}
         <TargetAudience />
 
         {/* 5. Live & Upcoming Events & Hackathon */}
