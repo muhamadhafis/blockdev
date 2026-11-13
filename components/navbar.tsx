@@ -81,14 +81,14 @@ export function Navbar() {
           </nav>
         </div>
 
-        {/* Right Side: Action Button */}
+        {/* Right Side: Action Button (light on hero video, dark elsewhere) */}
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="https://linktr.ee/blockdev_org"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="secondary" size="sm">
+            <Button variant={isHero ? "secondary" : "ghost"} size="sm">
               Come Join Us
             </Button>
           </Link>
@@ -129,7 +129,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="w-full"
             >
-              <Button variant="secondary" className="w-full">
+              <Button variant="ghost" className="w-full">
                 Come Join Us
               </Button>
             </Link>
