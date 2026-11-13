@@ -55,7 +55,7 @@ export function Navbar() {
               width={160}
               height={31}
               priority
-              className="h-6 sm:h-5 w-auto object-contain"
+              className="h-5 w-auto object-contain"
             />
           </Link>
 
@@ -78,7 +78,7 @@ export function Navbar() {
         </div>
 
         {/* Right Side: Action Button (light on hero video, dark elsewhere) */}
-        <div className="flex items-center gap-2 md:gap-3">
+        <div className="flex items-center">
           <Link
             href="https://linktr.ee/blockdev_org"
             target="_blank"
