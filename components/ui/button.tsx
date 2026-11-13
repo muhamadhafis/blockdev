@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "ghost" | "outline";
-  size?: "sm" | "md" | "lg" | "responsive";
+  size?: "xs" | "sm" | "md" | "lg" | "responsive";
   withArrow?: boolean;
 }
 
@@ -51,6 +51,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               variant === "outline",
 
             // Fixed Sizes
+            "h-8 rounded-md px-3.5 text-xs sm:h-11": size === "xs",
             "h-11 rounded-md px-3.5 text-xs": size === "sm",
             "h-13 rounded-md px-5 text-xs sm:text-sm": size === "md",
             "h-14 rounded-md px-6 text-sm sm:text-base": size === "lg",

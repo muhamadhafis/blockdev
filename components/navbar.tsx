@@ -43,11 +43,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 backdrop-blur-md transition-all duration-300 ${
-        isHero
-          ? "bg-black/25"
-          : "bg-white/25"
-      }`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300`}
     >
       <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Left Side: Brand Logo + Nav Links (grouped together) */}
@@ -59,7 +55,7 @@ export function Navbar() {
               width={160}
               height={31}
               priority
-              className="h-4 sm:h-5 w-auto object-contain"
+              className="h-6 sm:h-5 w-auto object-contain"
             />
           </Link>
 
@@ -88,7 +84,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant={isHero ? "secondary" : "ghost"} size="sm" className="px-3 sm:px-3.5">
+            <Button variant={isHero ? "secondary" : "ghost"} size="xs">
               Come Join Us
             </Button>
           </Link>
@@ -108,7 +104,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-zinc-200 bg-white/95 backdrop-blur-xl px-5 py-6">
+        <div className="md:hidden border-zinc-200 bg-white/95 px-5 py-6">
           <nav className="uppercase flex flex-col space-y-3">
             {navLinks.map((link) => (
               <Link
