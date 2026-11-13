@@ -46,9 +46,8 @@ export function EventWall() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="EVENT GALLERY"
           title="Glimpses of Our Events"
-          description="From regular meetups to regional conferences — take a look at the vibe, then join the next one."
+          description="From regular meetups to regional conferences."
         />
       </div>
 
@@ -58,7 +57,7 @@ export function EventWall() {
           items={items}
           columns={isSmUp ? 4 : 2}
           tileWidth={isSmUp ? 200 : 160}
-          tileHeight={isSmUp ? 132 : 106}
+          tileHeight={isSmUp ? 113 : 90}
           gap={16}
           tilt={16}
           turn={0}
