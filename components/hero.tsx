@@ -31,7 +31,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-6xl md:text-7xl tracking-[-0.04em] text-white leading-[1.08] max-w-4xl drop-shadow-md"
+          className="text-4xl sm:text-6xl md:text-7xl tracking-[-0.04em] text-white leading-[1.08] max-w-5xl drop-shadow-md"
         >
           Empowering Indonesia’s Builders
         </motion.h1>
@@ -41,7 +41,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-6 text-base sm:text-lg md:text-xl text-zinc-300 max-w-2xl font-normal leading-relaxed drop-shadow-sm"
+          className="mt-6 text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl font-normal leading-relaxed drop-shadow-sm"
         >
           Learn, build, and connect through a growing builder network across Indonesia.
         </motion.p>
@@ -71,7 +71,7 @@ export function Hero() {
 
           <Link href="#hackathon" className="w-full sm:w-auto">
             <Button
-              variant="secondary"
+              variant="ghost"
               size="md"
               className="w-full sm:w-auto"
             >
