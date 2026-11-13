@@ -3,6 +3,7 @@
 import React, { useSyncExternalStore } from "react";
 import LogoLoop, { type LogoItemImage } from "./ui/LogoLoop";
 import { SectionHeader } from "./ui/section-header";
+import { PARTNER_LOGOS as PARTNER_URLS } from "@/lib/data";
 
 const subscribeMediaQuery = (callback: () => void) => {
   if (typeof window === "undefined") return () => {};
@@ -19,8 +20,8 @@ const getSmServerSnapshot = () => {
   return false;
 };
 
-const PARTNER_LOGOS: LogoItemImage[] = Array.from({ length: 20 }, (_, i) => ({
-  src: `/images/partners/${i + 1}.svg`,
+const PARTNER_LOGOS: LogoItemImage[] = PARTNER_URLS.map((src, i) => ({
+  src,
   alt: `Partner ${i + 1}`,
   title: `Partner ${i + 1}`,
 }));

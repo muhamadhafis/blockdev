@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useSyncExternalStore } from "react";
+import Link from "next/link";
 import DriftWall from "./ui/DriftWall";
 import { SectionHeader } from "./ui/section-header";
+import { Button } from "./ui/button";
+import { EVENTS } from "@/lib/data";
 
 const subscribeMediaQuery = (callback: () => void) => {
   if (typeof window === "undefined") return () => {};
@@ -12,18 +15,8 @@ const subscribeMediaQuery = (callback: () => void) => {
 };
 
 const getSmSnapshot = () => window.matchMedia("(min-width: 640px)").matches;
+
 const getSmServerSnapshot = () => false;
-
-const EVENTS = [
-  { image: "/images/events/arbitrum-open-house-singapore.jpg", title: "Arbitrum Open House — Singapore" },
-  { image: "/images/events/astra-commons-jakarta.png", title: "Astra Commons Jakarta" },
-  { image: "/images/events/blockchain-life-2026.png", title: "Blockchain Life 2026" },
-  { image: "/images/events/kelas-rutin-batch-5.jpg", title: "Kelas Rutin Batch 5" },
-  { image: "/images/events/monad-metropolis.jpg", title: "Monad Metropolis" },
-  { image: "/images/events/workshop-web3-stikom-bali.jpg", title: "Workshop Web3 STIKOM Bali" },
-];
-
-const EVENT_LINK = "https://blockdev.org/event";
 
 export function EventWall() {
   const isSmUp = useSyncExternalStore(
@@ -32,11 +25,11 @@ export function EventWall() {
     getSmServerSnapshot
   );
 
-  // Loop the 6 photos so every column has enough tiles to drift seamlessly
+  // Loop the events so every column has enough tiles to drift seamlessly.
+  // No href: tiles are non-clickable — the page is a summary, the CTA below is the single link out.
   const items = [...EVENTS, ...EVENTS].map((event) => ({
     image: event.image,
     title: event.title,
-    href: EVENT_LINK,
   }));
 
   return (
@@ -55,7 +48,7 @@ export function EventWall() {
       <div className="h-[420px] sm:h-[520px] -mt-6 sm:-mt-8">
         <DriftWall
           items={items}
-          columns={isSmUp ? 4 : 2}
+          columns={isSmUp ? 4 : 3}
           tileWidth={isSmUp ? 200 : 160}
           tileHeight={isSmUp ? 113 : 90}
           gap={16}
@@ -73,6 +66,15 @@ export function EventWall() {
           grayscale
           overlayColor="#ffffff"
         />
+      </div>
+
+      {/* CTA */}
+      <div className="mt-10 flex justify-center">
+        <Link href="/event">
+          <Button variant="primary" size="md" withArrow>
+            <span>SEE MORE EVENTS</span>
+          </Button>
+        </Link>
       </div>
     </section>
   );

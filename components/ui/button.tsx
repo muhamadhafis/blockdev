@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "ghost" | "outline";
+  variant?: "primary" | "secondary" | "ghost" | "outline" | "dark";
   size?: "xs" | "sm" | "md" | "lg" | "responsive";
   withArrow?: boolean;
 }
@@ -29,7 +29,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled}
         className={cn(
-          "inline-flex items-center font-mono uppercase tracking-wider transition-all duration-200 select-none group",
+          "inline-flex items-center font-sans uppercase tracking-wider transition-all duration-200 select-none group",
           withArrow ? "justify-between" : "justify-center",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2",
           "disabled:opacity-40 disabled:cursor-not-allowed disabled:pointer-events-none",
@@ -42,9 +42,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             "bg-white text-zinc-950 hover:bg-zinc-100 hover:border-zinc-300 active:scale-[0.98] cursor-pointer":
               variant === "secondary",
 
-            // Ghost (Foto 2: Charcoal / Dark Gray with white font-mono text)
-            "bg-[#1c1c1f] text-white hover:bg-[#27272b] border border-white/10 active:scale-[0.98] cursor-pointer":
+            // Ghost (Charcoal translucent 20% with white font-mono text)
+            "bg-[#1c1c1f]/20 text-white hover:brightness-110 border border-white/10 active:scale-[0.98] cursor-pointer":
               variant === "ghost",
+
+            // Dark (Solid charcoal / old ghost style, readable on light backgrounds)
+            "bg-[#1c1c1f] text-white hover:brightness-110 border border-white/10 active:scale-[0.98] cursor-pointer":
+              variant === "dark",
 
             // Outline (clean light border)
             "bg-transparent text-zinc-800 border border-zinc-300 hover:bg-zinc-100/80 hover:text-zinc-950":

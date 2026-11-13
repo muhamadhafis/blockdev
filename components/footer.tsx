@@ -2,14 +2,50 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+const footerLinks = [
+  {
+    heading: "Main Menu",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Events", href: "/event" },
+      { label: "Hackathon", href: "/hackathon" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    heading: "Knowledge",
+    links: [
+      { label: "Knowledge", href: "/knowledge" },
+      { label: "Course", href: "/course" },
+    ],
+  },
+  {
+    heading: "Community",
+    links: [
+      { label: "Telegram (Official)", href: "https://t.me/blockdev_official" },
+      { label: "Discord Server", href: "https://discord.com/invite/VrjqHVgbNA" },
+      { label: "Linktree Portal", href: "https://linktr.ee/blockdev_org" },
+    ],
+  },
+  {
+    heading: "Social Media",
+    links: [
+      { label: "X (Twitter)", href: "https://x.com/blockdev_org" },
+      { label: "Instagram", href: "https://www.instagram.com/blockdev_org" },
+      { label: "YouTube", href: "https://www.youtube.com/@blockdev_org" },
+    ],
+  },
+];
+
 export function Footer() {
   return (
-    <footer className="border-t border-zinc-200 bg-zinc-50 text-zinc-600 text-sm">
+    <footer className="bg-black text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
-          {/* Brand Col */}
-          <div className="md:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-8">
+          {/* Brand (left on desktop, top on mobile) */}
+          <div>
+            <Link href="/" className="inline-flex items-center">
               <Image
                 src="/images/blockdev.png"
                 alt="BlockDev Logo"
@@ -18,117 +54,36 @@ export function Footer() {
                 className="h-7 w-auto object-contain"
               />
             </Link>
+          </div>
 
-            <p className="text-xs text-zinc-600 max-w-sm leading-relaxed">
-              A builder community in Indonesia focused on advancing emerging technology such as Blockchain, AI, Robotics, and future innovation.
-            </p>
-
-            <div className="pt-2 text-xs font-mono text-zinc-500">
-              Initiated by <strong className="text-zinc-900 font-semibold">William Sutanto</strong> & the Indonesian Builder Ecosystem Team.
+          {/* Link columns (right on desktop, stacked below logo on mobile).
+              Hovering the column dims all links; hovering one link lights it up. */}
+          {footerLinks.map((column) => (
+            <div key={column.heading} className="group/col">
+              <h4 className="text-xs font-sans uppercase tracking-wider text-zinc-500">
+                {column.heading}
+              </h4>
+              <ul className="mt-5 space-y-3 text-sm">
+                {column.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="inline-block text-zinc-100 transition-colors duration-150 group-hover/col:text-zinc-600 hover:text-white!"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-
-          {/* Navigasi */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-900">
-              Main Menu
-            </h4>
-            <ul className="space-y-1 text-xs font-mono">
-              <li>
-                <Link href="#tentang" className="inline-block py-2 hover:text-blue-600 transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#event-wall" className="inline-block py-2 hover:text-blue-600 transition-colors">
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link href="#kontak" className="inline-block py-2 hover:text-blue-600 transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Komunitas */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-900">
-              Community
-            </h4>
-            <ul className="space-y-2 text-xs font-mono">
-              <li>
-                <Link
-                  href="https://t.me/blockdev_official"
-                  target="_blank"
-                  className="inline-block py-2 hover:text-blue-600 transition-colors"
-                >
-                  Telegram (Official)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://discord.com/invite/VrjqHVgbNA"
-                  target="_blank"
-                  className="inline-block py-2 hover:text-blue-600 transition-colors"
-                >
-                  Discord Server
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://linktr.ee/blockdev_org"
-                  target="_blank"
-                  className="inline-block py-2 hover:text-blue-600 transition-colors"
-                >
-                  Linktree Portal
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social Media */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-900">
-              Social Media
-            </h4>
-            <ul className="space-y-2 text-xs font-mono">
-              <li>
-                <Link
-                  href="https://x.com/blockdev_org"
-                  target="_blank"
-                  className="inline-block py-2 hover:text-blue-600 transition-colors"
-                >
-                  X (Twitter)
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.instagram.com/blockdev_org"
-                  target="_blank"
-                  className="inline-block py-2 hover:text-blue-600 transition-colors"
-                >
-                  Instagram
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://www.youtube.com/@blockdev_org"
-                  target="_blank"
-                  className="inline-block py-2 hover:text-blue-600 transition-colors"
-                >
-                  YouTube
-                </Link>
-              </li>
-            </ul>
-          </div>
+          ))}
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 font-mono">
+        <div className="mt-14 pt-8 border-t border-zinc-800 text-xs text-zinc-500 font-sans">
           <p>© 2026 BlockDev. All rights reserved.</p>
-          <p>EMPOWERING INDONESIA&apos;S BUILDERS</p>
         </div>
       </div>
     </footer>

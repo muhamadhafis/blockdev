@@ -3,17 +3,20 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isHero, setIsHero] = useState(true);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const [isHero, setIsHero] = useState(isHome);
 
   useEffect(() => {
     const handleScroll = () => {
       const heroThreshold = window.innerHeight - 80;
-      setIsHero(window.scrollY < heroThreshold);
+      setIsHero(isHome && window.scrollY < heroThreshold);
     };
 
     handleScroll();
@@ -23,7 +26,7 @@ export function Navbar() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, []);
+  }, [isHome]);
 
   useEffect(() => {
     // Lock body scroll while the mobile drawer is open
@@ -33,10 +36,20 @@ export function Navbar() {
     };
   }, [mobileMenuOpen]);
 
-  const navLinks = [
-    { name: "About", href: "#tentang" },
-    { name: "Events", href: "#event-wall" },
-    { name: "Contact", href: "#kontak" },
+  const navLinks: { name: string; href: string; children?: { name: string; href: string }[] }[] = [
+    { name: "About", href: "/about" },
+    {
+      name: "Knowledge",
+      href: "/knowledge",
+      children: [
+        { name: "Knowledge", href: "/knowledge" },
+        { name: "Course", href: "/course" },
+      ],
+    },
+    { name: "Events", href: "/event" },
+    { name: "Hackathon", href: "/hackathon" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -59,19 +72,48 @@ export function Navbar() {
 
           {/* Desktop Navigation Links */}
           <nav className="uppercase hidden md:flex items-center gap-7">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`text-sm font-medium transition-colors duration-150 ${
-                  isHero
-                    ? "text-zinc-100 hover:text-white"
-                    : "text-zinc-600 hover:text-zinc-950"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.children ? (
+                <div key={link.name} className="group/col relative">
+                  <Link
+                    href={link.href}
+                    className={`inline-flex items-center gap-1 text-sm font-medium transition-colors duration-150 ${
+                      isHero
+                        ? "text-zinc-100 hover:text-white"
+                        : "text-zinc-600 hover:text-zinc-950"
+                    }`}
+                  >
+                    {link.name}
+                    <ChevronDown className="h-3.5 w-3.5" />
+                  </Link>
+                  <div className="invisible opacity-0 translate-y-1 group-hover/col:visible group-hover/col:opacity-100 group-hover/col:translate-y-0 absolute left-0 top-full pt-3 transition-all duration-150">
+                    <div className="min-w-44 rounded-lg border border-zinc-200 bg-white py-2 shadow-lg">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={child.href}
+                          className="block px-4 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-50 hover:text-zinc-950"
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors duration-150 ${
+                    isHero
+                      ? "text-zinc-100 hover:text-white"
+                      : "text-zinc-600 hover:text-zinc-950"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </nav>
         </div>
 
@@ -82,7 +124,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant={isHero ? "secondary" : "ghost"} size="xs">
+            <Button variant={isHero ? "secondary" : "dark"} size="xs">
               Come Join Us
             </Button>
           </Link>

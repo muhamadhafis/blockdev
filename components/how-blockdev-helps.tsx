@@ -12,7 +12,7 @@ export function HowBlockDevHelps() {
         "Build valuable connections with fellow builders, share experiences, and discover new collaboration opportunities.",
       category: "NETWORKING",
       image:
-        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=80",
+        "https://blockdev.sgp1.cdn.digitaloceanspaces.com/asset/journey/728bee70-0cd0-4ba1-83c4-5dc7e0a5d6cc.jpg",
     },
     {
       num: "02",
@@ -21,7 +21,7 @@ export function HowBlockDevHelps() {
         "Join an intensive session that combines theory and hands-on practice, designed to equip you with real-world skills to thrive in the world of emerging technologies.",
       category: "CURRICULUM",
       image:
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80",
+        "https://blockdev.sgp1.cdn.digitaloceanspaces.com/asset/journey/11b5d6b5-83f8-4687-9318-033f23fac877.jpg",
     },
     {
       num: "03",
@@ -30,7 +30,7 @@ export function HowBlockDevHelps() {
         "Learn directly through practice with experienced mentors, so your skills are ready to be applied in the real world.",
       category: "HANDS-ON",
       image:
-        "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80",
+        "https://blockdev.sgp1.cdn.digitaloceanspaces.com/asset/journey/acf30eb8-0b7e-4367-89a1-4d7324430600.jpg",
     },
     {
       num: "04",
@@ -39,7 +39,7 @@ export function HowBlockDevHelps() {
         "Turn your ideas into real solutions through intensive mentoring and access to the emerging tech ecosystem",
       category: "LAUNCHPAD",
       image:
-        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&auto=format&fit=crop&q=80",
+        "https://blockdev.sgp1.cdn.digitaloceanspaces.com/asset/journey/aa1fc478-1c8c-4515-8db8-1c667db28c3d.jpg",
     },
     {
       num: "05",
@@ -48,12 +48,12 @@ export function HowBlockDevHelps() {
         "Sharpen your skills, validate your ideas, and unlock collaboration opportunities through technology-based innovation competitions.",
       category: "COMPETITION",
       image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=80",
+        "https://blockdev.sgp1.cdn.digitaloceanspaces.com/asset/journey/6032b6a9-60e5-4450-964a-ff1edd823861.jpg",
     },
   ];
 
   return (
-    <section id="growth" className="py-16 sm:py-24 border-t border-zinc-200/90 bg-zinc-50/50 relative">
+    <section id="growth" className="pt-4 sm:pt-24 pb-16 sm:pb-24 border-t border-zinc-200/90 bg-zinc-50/50 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ScrollStack Container (title is the first stack item) */}
         <div className="w-full max-w-4xl mx-auto">
@@ -61,7 +61,7 @@ export function HowBlockDevHelps() {
             useWindowScroll={true}
             itemDistance={140}
             itemStackDistance={10}
-            stackPosition="max(28vh, 180px)"
+            stackPosition="max(18vh, 140px)"
             itemScale={0.04}
             baseScale={0.85}
             dimAmount={0.15}
