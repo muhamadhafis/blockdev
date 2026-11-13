@@ -14,13 +14,13 @@ export function CommunityCta() {
           <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-400/10 blur-[130px] rounded-full" />
 
           {/* Title */}
-          <h2 className="relative z-10 text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-zinc-950 max-w-3xl mx-auto leading-tight">
+          <h2 className="relative z-10 text-2xl sm:text-5xl font-semibold tracking-tight text-zinc-950 max-w-3xl mx-auto leading-tight">
             Ready to Build Indonesia&apos;s Tech Future?
           </h2>
 
           {/* Description */}
           <p className="relative z-10 mt-5 text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
-            Join 15,000+ developers, students, and innovators in the BlockDev ecosystem. Share ideas, find co-founders, and start building today.
+            Join 15,000+ builders who share ideas, find co-founders, and ship together.
           </p>
 
           {/* Primary & Ghost CTAs */}
