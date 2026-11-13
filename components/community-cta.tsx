@@ -8,13 +8,13 @@ import Link from "next/link";
 export function CommunityCta() {
   return (
     <section id="kontak" className="py-16 sm:py-24 relative overflow-hidden bg-white border-t border-zinc-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl border border-zinc-200 bg-gradient-to-b from-blue-50/30 via-white to-zinc-50 p-8 sm:p-14 lg:p-20 text-center shadow-lg overflow-hidden">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-md border border-zinc-200 bg-gradient-to-b from-blue-50/30 via-white to-zinc-50 p-8 sm:p-14 lg:p-20 text-center  overflow-hidden">
           {/* Subtle Ambient Radial Light in Background */}
           <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-400/10 blur-[130px] rounded-full" />
 
           {/* Title */}
-          <h2 className="relative z-10 text-2xl sm:text-5xl font-semibold tracking-tight text-zinc-950 max-w-3xl mx-auto leading-tight">
+          <h2 className="relative z-10 text-2xl sm:text-5xl font-semibold tracking-tight text-zinc-950 max-w-4xl mx-auto leading-tight">
             Ready to Build Indonesia&apos;s Tech Future?
           </h2>
 
