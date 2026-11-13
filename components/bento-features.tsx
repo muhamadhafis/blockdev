@@ -10,9 +10,9 @@ export function BentoFeatures() {
   return (
     <section
       id="tentang"
-      className="relative h-screen min-h-[100dvh] flex items-center justify-center border-t border-zinc-200/80 bg-white px-5 sm:px-8 lg:px-16 overflow-hidden"
+      className="relative flex items-center justify-center border-t border-zinc-200/80 bg-white px-5 py-20 sm:h-[100dvh] sm:min-h-[100dvh] sm:px-8 lg:px-16 sm:overflow-hidden"
     >
-      <div className="w-full max-w-5xl mx-auto flex items-center justify-center text-justify">
+      <div className="w-full max-w-5xl mx-auto flex items-center justify-center sm:text-justify">
         {/* Langsung ke deskripsi tanpa judul dengan ScrollReveal (Delay trigger: melewati setengah layar / top 50%) */}
         <ScrollReveal
           highlightColor="#2b6af7"

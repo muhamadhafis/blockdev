@@ -79,7 +79,6 @@ interface ScrollStackSettings {
 export interface ScrollStackProps {
   children: ReactNode;
   className?: string;
-  headerRef?: React.RefObject<HTMLDivElement | null>;
   itemDistance?: number;
   itemStackDistance?: number;
   stackPosition?: number | string;
@@ -99,7 +98,6 @@ export interface ScrollStackProps {
 const ScrollStack: React.FC<ScrollStackProps> = ({
   children,
   className = "",
-  headerRef,
   itemDistance = 100,
   itemStackDistance = 24,
   stackPosition = "15%",
@@ -256,18 +254,6 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
         });
       });
 
-      if (headerRef?.current && slots.length > 0) {
-        const lastSlot = slots[slots.length - 1];
-        const lastPin = stackTop + (slots.length - 1) * offset;
-        const currentTop = lastSlot.getBoundingClientRect().top;
-        const exitOffset = Math.max(0, lastPin - currentTop);
-        write("headerExit", exitOffset, (val) => {
-          if (headerRef.current) {
-            headerRef.current.style.transform = val > 0 ? `translate3d(0, -${val}px, 0)` : "";
-          }
-        });
-      }
-
       const done = slots.length > 1 && lastCover >= 0.999;
       if (done !== complete) {
         complete = done;
@@ -382,12 +368,9 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       window.removeEventListener("pointerup", onRelease);
       window.removeEventListener("pointercancel", onRelease);
       window.removeEventListener("resize", schedule);
-      if (headerRef?.current) {
-        headerRef.current.style.transform = "";
-      }
       scheduleRef.current = null;
     };
-  }, [useWindowScroll, headerRef]);
+  }, [useWindowScroll]);
 
   return (
     <div

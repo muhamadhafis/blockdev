@@ -33,29 +33,29 @@ export function Footer() {
             <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-zinc-900">
               Menu Utama
             </h4>
-            <ul className="space-y-2 text-xs font-mono">
+            <ul className="space-y-1 text-xs font-mono">
               <li>
-                <Link href="#tentang" className="hover:text-blue-600 transition-colors">
+                <Link href="#tentang" className="inline-block py-2 hover:text-blue-600 transition-colors">
                   Tentang
                 </Link>
               </li>
               <li>
-                <Link href="#knowledge" className="hover:text-blue-600 transition-colors">
+                <Link href="#knowledge" className="inline-block py-2 hover:text-blue-600 transition-colors">
                   Knowledge
                 </Link>
               </li>
               <li>
-                <Link href="#hackathon" className="hover:text-blue-600 transition-colors">
+                <Link href="#hackathon" className="inline-block py-2 hover:text-blue-600 transition-colors">
                   Hackathon
                 </Link>
               </li>
               <li>
-                <Link href="#acara" className="hover:text-blue-600 transition-colors">
+                <Link href="#acara" className="inline-block py-2 hover:text-blue-600 transition-colors">
                   Acara
                 </Link>
               </li>
               <li>
-                <Link href="#kontak" className="hover:text-blue-600 transition-colors">
+                <Link href="#kontak" className="inline-block py-2 hover:text-blue-600 transition-colors">
                   Kontak
                 </Link>
               </li>
@@ -72,7 +72,7 @@ export function Footer() {
                 <Link
                   href="https://t.me/blockdev_official"
                   target="_blank"
-                  className="hover:text-blue-600 transition-colors"
+                  className="inline-block py-2 hover:text-blue-600 transition-colors"
                 >
                   Telegram Resmi
                 </Link>
@@ -81,7 +81,7 @@ export function Footer() {
                 <Link
                   href="https://discord.com/invite/VrjqHVgbNA"
                   target="_blank"
-                  className="hover:text-blue-600 transition-colors"
+                  className="inline-block py-2 hover:text-blue-600 transition-colors"
                 >
                   Discord Server
                 </Link>
@@ -90,7 +90,7 @@ export function Footer() {
                 <Link
                   href="https://linktr.ee/blockdev_org"
                   target="_blank"
-                  className="hover:text-blue-600 transition-colors"
+                  className="inline-block py-2 hover:text-blue-600 transition-colors"
                 >
                   Linktree Portal
                 </Link>
@@ -108,7 +108,7 @@ export function Footer() {
                 <Link
                   href="https://x.com/blockdev_org"
                   target="_blank"
-                  className="hover:text-blue-600 transition-colors"
+                  className="inline-block py-2 hover:text-blue-600 transition-colors"
                 >
                   X (Twitter)
                 </Link>
@@ -117,7 +117,7 @@ export function Footer() {
                 <Link
                   href="https://www.instagram.com/blockdev_org"
                   target="_blank"
-                  className="hover:text-blue-600 transition-colors"
+                  className="inline-block py-2 hover:text-blue-600 transition-colors"
                 >
                   Instagram
                 </Link>
@@ -126,7 +126,7 @@ export function Footer() {
                 <Link
                   href="https://www.youtube.com/@blockdev_org"
                   target="_blank"
-                  className="hover:text-blue-600 transition-colors"
+                  className="inline-block py-2 hover:text-blue-600 transition-colors"
                 >
                   YouTube
                 </Link>

@@ -17,7 +17,7 @@ export function CommunityCta() {
   };
 
   return (
-    <section id="kontak" className="py-24 relative overflow-hidden bg-white border-t border-zinc-200">
+    <section id="kontak" className="py-16 sm:py-24 relative overflow-hidden bg-white border-t border-zinc-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl border border-zinc-200 bg-gradient-to-b from-blue-50/30 via-white to-zinc-50 p-8 sm:p-14 lg:p-20 text-center shadow-lg overflow-hidden">
           {/* Subtle Ambient Radial Light in Background */}
@@ -78,7 +78,7 @@ export function CommunityCta() {
                 <span>Terima kasih! Kamu telah terdaftar di newsletter BlockDev.</span>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex gap-2">
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="email"
                   value={email}

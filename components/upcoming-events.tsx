@@ -44,7 +44,7 @@ export function UpcomingEvents() {
   ];
 
   return (
-    <section id="acara" className="py-24 border-t border-zinc-200 bg-zinc-50/40 relative">
+    <section id="acara" className="py-16 sm:py-24 border-t border-zinc-200 bg-zinc-50/40 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -123,6 +123,16 @@ export function UpcomingEvents() {
               </div>
             </SpotlightCard>
           ))}
+        </div>
+
+        {/* All Events button (mobile: shown below grid, hidden in header on md+) */}
+        <div className="mt-10 flex justify-center md:hidden">
+          <Link href="https://blockdev.org/event" target="_blank">
+            <Button variant="secondary" size="sm" className="text-xs">
+              <span>SEMUA ACARA</span>
+              <ArrowUpRight className="h-3.5 w-3.5 ml-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -4,7 +4,6 @@ import React from "react";
 import ScrollStack, { ScrollStackItem } from "./ui/ScrollStack";
 
 export function HowBlockDevHelps() {
-  const headerRef = React.useRef<HTMLDivElement>(null);
   const cards = [
     {
       num: "01",
@@ -54,35 +53,31 @@ export function HowBlockDevHelps() {
   ];
 
   return (
-    <section id="growth" className="py-24 sm:py-32 border-t border-zinc-200/90 bg-zinc-50/50 relative">
+    <section id="growth" className="py-16 sm:py-24 border-t border-zinc-200/90 bg-zinc-50/50 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div
-          ref={headerRef}
-          className="sticky top-20 sm:top-24 z-20 text-center max-w-3xl mx-auto mb-8 pt-2 will-change-transform transition-[transform] duration-75"
-        >
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-950">
-            How BlockDev Helps You Grow
-          </h2>
-          <p className="mt-2 text-xs sm:text-base text-zinc-600 max-w-xl mx-auto line-clamp-2 sm:line-clamp-none">
-            From hands-on learning to global venture incubation, explore how we accelerate every stage of your builder journey.
-          </p>
-        </div>
-
-        {/* ScrollStack Container */}
+        {/* ScrollStack Container (title is the first stack item) */}
         <div className="w-full max-w-4xl mx-auto">
           <ScrollStack
-            headerRef={headerRef}
             useWindowScroll={true}
             itemDistance={140}
             itemStackDistance={10}
-            stackPosition="28vh"
+            stackPosition="max(28vh, 180px)"
             itemScale={0.04}
             baseScale={0.85}
             dimAmount={0.15}
             blurAmount={0}
             smoothScroll={false}
           >
+            {/* Section header as first stack item — pins, then gets covered by the cards */}
+            <div className="text-center max-w-3xl mx-auto pt-2 pb-4">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-zinc-950">
+                How BlockDev Helps You Grow
+              </h2>
+              <p className="mt-2 text-xs sm:text-base text-zinc-600 max-w-xl mx-auto">
+                From hands-on learning to global venture incubation, explore how we accelerate every stage of your builder journey.
+              </p>
+            </div>
+
             {cards.map((card) => (
               <ScrollStackItem key={card.num}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center h-full">

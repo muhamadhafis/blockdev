@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 
 export function Hero() {
   return (
-    <section className="relative h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative h-[100dvh] min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20">
       {/* 1. Background Video */}
       <video
         src="/videos/hero.mp4"

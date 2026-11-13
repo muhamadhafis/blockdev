@@ -182,7 +182,7 @@ export function OurJourney() {
   };
 
   return (
-    <section id="journey" className="py-24 sm:py-32 border-t border-zinc-200/90 bg-white relative">
+    <section id="journey" className="py-16 sm:py-24 border-t border-zinc-200/90 bg-white relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <SectionHeader
@@ -207,7 +207,7 @@ export function OurJourney() {
 
         {/* See More / Show Less Action */}
         {(hasMore || canReset) && (
-          <div className="mt-12 flex justify-center">
+          <div className="mt-12 flex justify-center gap-2">
             {canReset && (
               <Button
                 type="button"

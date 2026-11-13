@@ -25,6 +25,14 @@ export function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    // Lock body scroll while the mobile drawer is open
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { name: "Tentang", href: "#tentang" },
     { name: "Knowledge", href: "#knowledge" },
@@ -101,7 +109,7 @@ export function Navbar() {
         {/* Mobile Menu Toggle Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`md:hidden p-2 transition-colors ${
+          className={`md:hidden p-2.5 -mr-2.5 transition-colors ${
             isHero ? "text-white hover:text-zinc-200" : "text-zinc-700 hover:text-zinc-950"
           }`}
           aria-label="Toggle Navigation Menu"
@@ -119,7 +127,7 @@ export function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-medium text-zinc-700 hover:text-zinc-950 py-1.5"
+                className="text-base font-medium text-zinc-700 hover:text-zinc-950 py-2.5"
               >
                 {link.name}
               </Link>

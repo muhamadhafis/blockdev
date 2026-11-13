@@ -75,7 +75,7 @@ export function TargetAudience() {
   const current = personas[activeTab];
 
   return (
-    <section id="knowledge" className="py-24 border-t border-zinc-200 bg-white relative">
+    <section id="knowledge" className="py-16 sm:py-24 border-t border-zinc-200 bg-white relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
