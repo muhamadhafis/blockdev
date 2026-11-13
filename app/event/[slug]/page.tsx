@@ -5,6 +5,8 @@ import { DetailArticle } from "@/components/ui/detail-article";
 import { Button } from "@/components/ui/button";
 import { EVENTS } from "@/lib/data";
 
+export const instant = false;
+
 export function generateStaticParams() {
   return EVENTS.map((event) => ({ slug: event.slug }));
 }

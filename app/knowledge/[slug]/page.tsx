@@ -3,6 +3,8 @@ import { PageShell } from "@/components/ui/page-shell";
 import { DetailArticle } from "@/components/ui/detail-article";
 import { KNOWLEDGE_ARTICLES, KNOWLEDGE_VIDEOS, type KnowledgeItem } from "@/lib/data";
 
+export const instant = false;
+
 const ALL_KNOWLEDGE = [
   ...KNOWLEDGE_ARTICLES.map((item) => ({ item, kind: "Article" as const })),
   ...KNOWLEDGE_VIDEOS.map((item) => ({ item, kind: "Video" as const })),
