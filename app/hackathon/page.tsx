@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { PageShell } from "@/components/ui/page-shell";
+import { PageHeader } from "@/components/ui/page-header";
+import { Button } from "@/components/ui/button";
+import { EVENTS } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Hackathon | BlockDev",
@@ -15,21 +17,17 @@ const INTRO = [
 
 export default function HackathonPage() {
   return (
-    <div className="min-h-screen bg-white text-zinc-900 flex flex-col font-sans selection:bg-blue-500/20 selection:text-blue-700">
-      <Navbar />
-      <main className="flex-1 pt-28 sm:pt-36 pb-16 sm:pb-24">
+    <PageShell>
+      <div className="pt-28 sm:pt-36 pb-16 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <header className="max-w-3xl">
-            <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
-              Hackathon
-            </h1>
-            <div className="mt-4 space-y-3 text-base sm:text-lg text-zinc-600 leading-relaxed">
-              {INTRO.map((line, index) => (
-                <p key={index}>{line}</p>
-              ))}
-            </div>
-          </header>
+          <PageHeader
+            title="Hackathon"
+            description={INTRO[0]}
+          >
+            <p className="mt-3 text-base sm:text-lg text-zinc-600 leading-relaxed">
+              {INTRO[1]}
+            </p>
+          </PageHeader>
 
           {/* No active hackathons */}
           <section className="mt-12 rounded-2xl border border-zinc-200 bg-zinc-50/60 p-8 sm:p-12 text-center">
@@ -40,30 +38,29 @@ export default function HackathonPage() {
               Stay tuned on our official channels — the next competition will be
               announced on Telegram and Discord first.
             </p>
-            <div className="mt-6 flex justify-center gap-3">
+            <div className="mt-6 flex justify-center gap-6">
               <a
                 href="https://t.me/blockdev_official"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="text-sm font-medium text-blue-600 hover:text-blue-700">
-                  Telegram →
-                </span>
+                <Button variant="primary" size="sm" withArrow>
+                  <span>TELEGRAM</span>
+                </Button>
               </a>
               <a
                 href="https://discord.com/invite/VrjqHVgbNA"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="text-sm font-medium text-blue-600 hover:text-blue-700">
-                  Discord →
-                </span>
+                <Button variant="ghost" size="sm">
+                  <span>DISCORD</span>
+                </Button>
               </a>
             </div>
           </section>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </PageShell>
   );
 }

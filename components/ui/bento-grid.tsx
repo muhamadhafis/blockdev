@@ -58,7 +58,7 @@ export function BentoCard({
             </div>
           )}
           {tag && (
-            <span className="text-[11px] font-mono tracking-wider uppercase text-zinc-600 border border-zinc-200 bg-zinc-50 px-2.5 py-0.5 rounded-full">
+            <span className="text-[11px] font-sans tracking-wider uppercase text-zinc-600 border border-zinc-200 bg-zinc-50 px-2.5 py-0.5 rounded-full">
               {tag}
             </span>
           )}

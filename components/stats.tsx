@@ -38,7 +38,7 @@ export function Stats() {
                 replayOnHover
                 className="text-6xl sm:text-7xl font-semibold tracking-tight text-zinc-950"
               />
-              <p className="mt-3 font-mono text-xs uppercase tracking-widest text-zinc-500">
+              <p className="mt-3 font-sans text-xs uppercase tracking-widest text-zinc-500">
                 {stat.label}
               </p>
             </div>

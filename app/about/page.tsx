@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { PageShell } from "@/components/ui/page-shell";
+import { PageHeader } from "@/components/ui/page-header";
 import { TEAM } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     "BlockDev (Yayasan Literasi Rantai Digital) is an Indonesian foundation focused on developing builders in emerging technology.",
 };
+
+const ABOUT_INTRO =
+  "BlockDev (Yayasan Literasi Rantai Digital) is an Indonesian foundation focused on developing builders in emerging technology such as Blockchain, AI, and Robotics — not only as developers, but also equipping them with an entrepreneurial spirit and direct connections to communities, startups, companies, and institutions shaping the emerging tech ecosystem in Indonesia and globally.";
 
 const ACTIVITIES = [
   {
@@ -30,24 +33,11 @@ const ACTIVITIES = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white text-zinc-900 flex flex-col font-sans selection:bg-blue-500/20 selection:text-blue-700">
-      <Navbar />
-      <main className="flex-1 pt-28 sm:pt-36 pb-16 sm:pb-24">
+    <PageShell>
+      <div className="pt-28 sm:pt-36 pb-16 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Intro */}
-          <header className="max-w-3xl">
-            <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
-              About BlockDev
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
-              BlockDev (Yayasan Literasi Rantai Digital) is an Indonesian foundation
-              focused on developing builders in emerging technology such as Blockchain,
-              AI, and Robotics — not only as developers, but also equipping them with an
-              entrepreneurial spirit and direct connections to communities, startups,
-              companies, and institutions shaping the emerging tech ecosystem in Indonesia
-              and globally.
-            </p>
-          </header>
+          <PageHeader title="About BlockDev" description={ABOUT_INTRO} />
 
           {/* Learn. Build. Connect. */}
           <section className="mt-16 rounded-2xl border border-zinc-200 bg-zinc-50/60 p-8 sm:p-12">
@@ -123,8 +113,7 @@ export default function AboutPage() {
             </div>
           </section>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </PageShell>
   );
 }

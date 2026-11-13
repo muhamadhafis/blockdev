@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { PageShell } from "@/components/ui/page-shell";
+import { PageHeader } from "@/components/ui/page-header";
 import { Button } from "@/components/ui/button";
 import { DASHBOARD_URL, KNOWLEDGE_VIDEOS } from "@/lib/data";
 
@@ -31,19 +30,13 @@ const MODULES = [
 
 export default function CoursePage() {
   return (
-    <div className="min-h-screen bg-white text-zinc-900 flex flex-col font-sans selection:bg-blue-500/20 selection:text-blue-700">
-      <Navbar />
-      <main className="flex-1 pt-28 sm:pt-36 pb-16 sm:pb-24">
+    <PageShell>
+      <div className="pt-28 sm:pt-36 pb-16 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <header className="max-w-3xl">
-            <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
-              Course
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
-              Structured learning programs from BlockDev — from blockchain fundamentals
-              to hands-on smart contract engineering, guided by experienced mentors.
-            </p>
+          <PageHeader
+            title="Course"
+            description="Structured learning programs from BlockDev — from blockchain fundamentals to hands-on smart contract engineering, guided by experienced mentors."
+          >
             <div className="mt-8">
               <a href={DASHBOARD_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="primary" size="md" withArrow>
@@ -51,7 +44,7 @@ export default function CoursePage() {
                 </Button>
               </a>
             </div>
-          </header>
+          </PageHeader>
 
           {/* Modules */}
           <section className="mt-12">
@@ -80,22 +73,21 @@ export default function CoursePage() {
             </h2>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
               {KNOWLEDGE_VIDEOS.map((video) => (
-                <Link
-                  key={video.title}
-                  href="/knowledge"
+                <a
+                  key={video.slug}
+                  href={`/knowledge/${video.slug}`}
                   className="group/col inline-flex items-center justify-between rounded-lg border border-zinc-200 px-4 py-3 text-sm text-zinc-700 transition-all duration-150 hover:brightness-105 hover:text-zinc-950"
                 >
                   <span>{video.title}</span>
-                  <span className="text-xs font-mono uppercase text-zinc-400 group-hover/col:text-zinc-600">
+                  <span className="text-xs font-sans uppercase text-zinc-400 group-hover/col:text-zinc-600">
                     Video
                   </span>
-                </Link>
+                </a>
               ))}
             </div>
           </section>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </PageShell>
   );
 }

@@ -38,11 +38,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             "bg-radial from-[#2b6af7] via-[#2563EB] to-[#1d4ed8] text-white border border-blue-400/40 hover:brightness-105 active:scale-[0.98] cursor-pointer":
               variant === "primary",
 
-            // Secondary (Foto 1: Solid White background with black font-mono text)
+            // Secondary (Foto 1: Solid White background with black font-sans text)
             "bg-white text-zinc-950 hover:bg-zinc-100 hover:border-zinc-300 active:scale-[0.98] cursor-pointer":
               variant === "secondary",
 
-            // Ghost (Charcoal translucent 20% with white font-mono text)
+            // Ghost (Charcoal translucent 20% with white font-sans text)
             "bg-[#1c1c1f]/20 text-white hover:brightness-110 border border-white/10 active:scale-[0.98] cursor-pointer":
               variant === "ghost",
 

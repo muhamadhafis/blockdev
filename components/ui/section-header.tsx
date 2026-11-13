@@ -25,7 +25,7 @@ export function SectionHeader({
       )}
     >
       {badge && (
-        <p className="font-mono text-xs uppercase tracking-widest text-zinc-500">
+        <p className="font-sans text-xs uppercase tracking-widest text-zinc-500">
           {badge}
         </p>
       )}

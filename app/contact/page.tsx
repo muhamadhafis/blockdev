@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { PageShell } from "@/components/ui/page-shell";
+import { PageHeader } from "@/components/ui/page-header";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -30,20 +30,13 @@ const SOCIALS = [
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white text-zinc-900 flex flex-col font-sans selection:bg-blue-500/20 selection:text-blue-700">
-      <Navbar />
-      <main className="flex-1 pt-28 sm:pt-36 pb-16 sm:pb-24">
+    <PageShell>
+      <div className="pt-28 sm:pt-36 pb-16 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <header className="max-w-3xl">
-            <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-950">
-              Contact
-            </h1>
-            <p className="mt-4 text-base sm:text-lg text-zinc-600 leading-relaxed">
-              Join the community or reach out to the BlockDev team — we are most
-              responsive on Telegram and Discord.
-            </p>
-          </header>
+          <PageHeader
+            title="Contact"
+            description="Join the community or reach out to the BlockDev team — we are most responsive on Telegram and Discord."
+          />
 
           {/* Channels */}
           <section className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -88,8 +81,7 @@ export default function ContactPage() {
             </ul>
           </section>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </div>
+    </PageShell>
   );
 }
