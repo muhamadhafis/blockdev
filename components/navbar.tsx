@@ -59,7 +59,7 @@ export function Navbar() {
               width={160}
               height={31}
               priority
-              className="h-5 sm:h-6 w-auto object-contain"
+              className="h-4 sm:h-5 w-auto object-contain"
             />
           </Link>
 
@@ -82,34 +82,34 @@ export function Navbar() {
         </div>
 
         {/* Right Side: Action Button (light on hero video, dark elsewhere) */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
           <Link
             href="https://linktr.ee/blockdev_org"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant={isHero ? "secondary" : "ghost"} size="sm">
+            <Button variant={isHero ? "secondary" : "ghost"} size="sm" className="px-3 sm:px-3.5">
               Come Join Us
             </Button>
           </Link>
-        </div>
 
-        {/* Mobile Menu Toggle Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`md:hidden p-2.5 -mr-2.5 transition-colors ${
-            isHero ? "text-white hover:text-zinc-200" : "text-zinc-700 hover:text-zinc-950"
-          }`}
-          aria-label="Toggle Navigation Menu"
-        >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+          {/* Mobile Menu Toggle Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={`md:hidden p-2.5 -mr-2.5 transition-colors ${
+              isHero ? "text-white hover:text-zinc-200" : "text-zinc-700 hover:text-zinc-950"
+            }`}
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-zinc-200 bg-white/95 backdrop-blur-xl px-5 py-6 space-y-4">
-          <div className="uppercase flex flex-col space-y-3">
+        <div className="md:hidden border-zinc-200 bg-white/95 backdrop-blur-xl px-5 py-6">
+          <nav className="uppercase flex flex-col space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -120,20 +120,7 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-          </div>
-
-          <div className="pt-4 border-t border-zinc-200 flex flex-col gap-2.5">
-            <Link
-              href="https://linktr.ee/blockdev_org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
-              <Button variant="ghost" className="w-full">
-                Come Join Us
-              </Button>
-            </Link>
-          </div>
+          </nav>
         </div>
       )}
     </header>
