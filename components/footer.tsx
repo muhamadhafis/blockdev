@@ -40,17 +40,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#knowledge" className="inline-block py-2 hover:text-blue-600 transition-colors">
-                  Knowledge
-                </Link>
-              </li>
-              <li>
-                <Link href="#hackathon" className="inline-block py-2 hover:text-blue-600 transition-colors">
-                  Hackathon
-                </Link>
-              </li>
-              <li>
-                <Link href="#acara" className="inline-block py-2 hover:text-blue-600 transition-colors">
+                <Link href="#event-wall" className="inline-block py-2 hover:text-blue-600 transition-colors">
                   Events
                 </Link>
               </li>

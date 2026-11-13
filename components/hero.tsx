@@ -69,7 +69,7 @@ export function Hero() {
             </Button>
           </Link>
 
-          <Link href="#hackathon" className="w-full sm:w-auto">
+          <Link href="#event-wall" className="w-full sm:w-auto">
             <Button
               variant="ghost"
               size="md"

@@ -35,9 +35,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "About", href: "#tentang" },
-    { name: "Knowledge", href: "#knowledge" },
-    { name: "Hackathon", href: "#hackathon" },
-    { name: "Events", href: "#acara" },
+    { name: "Events", href: "#event-wall" },
     { name: "Contact", href: "#kontak" },
   ];
 

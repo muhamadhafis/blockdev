@@ -6,8 +6,6 @@ import { HowBlockDevHelps } from "@/components/how-blockdev-helps";
 import { OurJourney } from "@/components/our-journey";
 import { LogoCloud } from "@/components/logo-cloud";
 import { EventWall } from "@/components/event-wall";
-import { TargetAudience } from "@/components/target-audience";
-import { UpcomingEvents } from "@/components/upcoming-events";
 import { CommunityCta } from "@/components/community-cta";
 import { Footer } from "@/components/footer";
 
@@ -39,13 +37,7 @@ export default function Home() {
         {/* 6. Event Gallery Glimpse (DriftWall) */}
         <EventWall />
 
-        {/* 7. Audience Breakdown: Who is BlockDev for? */}
-        <TargetAudience />
-
-        {/* 5. Live & Upcoming Events & Hackathon */}
-        <UpcomingEvents />
-
-        {/* 6. High-conversion Community Join & Newsletter */}
+        {/* 7. High-conversion Community Join & Newsletter */}
         <CommunityCta />
       </main>
 
