@@ -65,7 +65,7 @@ export function Hero() {
               withArrow
               className="w-full sm:w-auto"
             >
-              GABUNG BLOCKDEV
+              JOIN BLOCKDEV
             </Button>
           </Link>
 
@@ -75,7 +75,7 @@ export function Hero() {
               size="md"
               className="w-full sm:w-auto"
             >
-              EKSPLORASI PROGRAM
+              EXPLORE PROGRAMS
             </Button>
           </Link>
         </motion.div>

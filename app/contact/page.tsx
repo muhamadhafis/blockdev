@@ -14,18 +14,20 @@ const CHANNELS = [
     label: "Telegram (Official)",
     href: "https://t.me/blockdev_official",
     description: "Our main hub for daily discussions, announcements, and builder networking.",
+    variant: "telegram" as const,
   },
   {
     label: "Discord Server",
     href: "https://discord.com/invite/VrjqHVgbNA",
     description: "Voice chats, study groups, and event coordination with the community.",
+    variant: "discord" as const,
   },
 ];
 
 const SOCIALS = [
-  { label: "X (Twitter)", href: "https://x.com/blockdev_org" },
-  { label: "Instagram", href: "https://www.instagram.com/blockdev_org" },
-  { label: "YouTube", href: "https://www.youtube.com/@blockdev_org" },
+  { label: "X (Twitter)", href: "https://x.com/blockdev_org", variant: "x" as const },
+  { label: "Instagram", href: "https://www.instagram.com/blockdev_org", variant: "instagram" as const },
+  { label: "YouTube", href: "https://www.youtube.com/@blockdev_org", variant: "youtube" as const },
 ];
 
 export default function ContactPage() {
@@ -51,7 +53,7 @@ export default function ContactPage() {
                 </p>
                 <div className="mt-5">
                   <a href={channel.href} target="_blank" rel="noopener noreferrer">
-                    <Button variant="primary" size="sm" withArrow>
+                    <Button variant={channel.variant} size="sm">
                       <span>JOIN NOW</span>
                     </Button>
                   </a>
@@ -72,9 +74,10 @@ export default function ContactPage() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/col inline-flex items-center rounded-lg border border-zinc-200 px-4 py-2.5 text-sm text-zinc-700 transition-all duration-150 hover:brightness-105 hover:text-zinc-950"
                   >
-                    {social.label}
+                    <Button variant={social.variant} size="sm">
+                      <span>{social.label}</span>
+                    </Button>
                   </a>
                 </li>
               ))}

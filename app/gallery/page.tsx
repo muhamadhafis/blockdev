@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/ui/page-shell";
 import { PageHeader } from "@/components/ui/page-header";
-import { ContentCard } from "@/components/ui/content-card";
 import Masonry from "@/components/ui/Masonry";
 import { GALLERY_PHOTOS } from "@/lib/data";
 
