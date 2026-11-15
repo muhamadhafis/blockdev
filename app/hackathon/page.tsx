@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageShell } from "@/components/ui/page-shell";
 import { PageHeader } from "@/components/ui/page-header";
 import { Button } from "@/components/ui/button";
-import { EVENTS } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Hackathon | BlockDev",
@@ -44,7 +43,7 @@ export default function HackathonPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="primary" size="sm" withArrow>
+                <Button variant="telegram" size="sm">
                   <span>TELEGRAM</span>
                 </Button>
               </a>
@@ -53,7 +52,7 @@ export default function HackathonPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="ghost" size="sm">
+                <Button variant="discord" size="sm">
                   <span>DISCORD</span>
                 </Button>
               </a>
